@@ -7,4 +7,4 @@ img: post-1.jpg # Add image post (optional)
 tags: [Blog, Machine Learning]
 author: Adam Neilson # Add name author (optional)
 ---
-Vaporwa
+Vapor
