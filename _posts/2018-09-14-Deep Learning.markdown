@@ -7,4 +7,4 @@ img: post-2.jpg # Add image post (optional)
 tags: [Blog, Deep Learning]
 author: # Add name author (optional)
 ---
-You’ll find
+You’l
