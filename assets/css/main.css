@@ -1564,7 +1564,7 @@ pre code {
   display: inline-block;
   color: #87314e;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 12px;
   margin-bottom: 10px;
 }
