@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  Statistics
+title:  Linear Algebra
 date:   2018-09-14 23:17:20 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: post-3.jpg # Add image post (optional)
-tags: [Blog, Statistics]
+tags: [Blog, Linear Algebra]
 author: # Add name author (optional)
 ---
 You’ll
