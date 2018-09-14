@@ -7,5 +7,5 @@ img: post-6.jpg # Add image post (optional)
 tags: [Blog, Computer Science]
 author: # Add name author (optional)
 ---
-You’ll fin
+You’ll fi
 
