@@ -7,53 +7,11 @@ img: post-6.jpg # Add image post (optional)
 tags: [Blog, Machine Learning]
 author: junhyung BYUN # Add name author (optional)
 ---
-# Supervised Learning
+# Algorithm
+## · Genetic Algorithm
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Unsupervised Learning
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Semi-Supervised Learning
-
-
-
-
-
-
-
-
-
-
+# Parameter Estimation Method
+## · Forward Selection
+## · Backward Elimination
+## · Stepwise Selection
