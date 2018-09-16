@@ -1189,10 +1189,10 @@ pre code {
   overflow: hidden;
 }
 
-.page-image .cover-image {
-  height: 30%;
+/* .page-image .cover-image {
+  height: 50%;
   width: 100%;
-}
+} */
 
 .page-content {
   margin-top: -80px;
