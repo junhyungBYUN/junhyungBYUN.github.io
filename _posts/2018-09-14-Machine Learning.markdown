@@ -12,6 +12,4 @@ author: junhyung BYUN # Add name author (optional)
 
 
 # Parameter Estimation Method
-## · Forward Selection
-## · Backward Elimination
-## · Stepwise Selection
+## ·
