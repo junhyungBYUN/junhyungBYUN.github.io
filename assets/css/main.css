@@ -1180,6 +1180,19 @@ pre code {
 }
 
 /* = = = = = = = = = = Post-Page Styles = = = = = = = = = = */
+/* .page-image {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  height: 50px;
+  background-color: #fff;
+  overflow: hidden;
+}*/
+
+/* .page-image .cover-image {
+  height: 0%;
+  width: 100%;
+} */
 
 .page-content {
   margin-top: 10px;
@@ -1675,9 +1688,9 @@ pre code {
   .search-icon-close {
     font-size: 16px;
   }
-  .page-image {
+  /*.page-image {
     height: 380px;
-  }
+  }*/
   .recent-box .recent-list .recent-item {
     position: relative;
     display: inline-block;
