@@ -10,8 +10,10 @@ author: junhyung BYUN # Add name author (optional)
 # Algorithm
 ## · 
 
-
 # Parameter Estimation Method
+## · 
+
+# Variable Selection / Variable Extraction
 ## · Forward Selection
 ## · Backward Elimination
 ## · Stepwise Selection
