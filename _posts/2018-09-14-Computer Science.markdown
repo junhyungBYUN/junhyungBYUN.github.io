@@ -7,4 +7,4 @@ img: post-1.jpg # Add image post (optional)
 tags: [Blog, Computer Science]
 author: junhyung BYUN # Add name author (optional)
 ---
-준비
+준비중입니다.
