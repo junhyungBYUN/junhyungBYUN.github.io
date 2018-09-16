@@ -7,14 +7,14 @@ img: post-4.jpg # Add image post (optional)
 tags: [Blog, Statistics]
 author: junhyung BYUN # Add name author (optional)
 ---
-# Function
-## · 
-
-# Parameter Estimation Method
-## · 
-
 # Variable Selection / Variable Extraction
 ## · Forward Selection
 ## · Backward Elimination
 ## · Stepwise Selection
 ## · Principal Component Analysis
+
+# Function
+## · 
+
+# Parameter Estimation Method
+## · 
