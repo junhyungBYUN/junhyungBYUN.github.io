@@ -1066,7 +1066,7 @@ pre code {
 
 /* = = = = = = = = = = Post-Card Styles = = = = = = = = = = */
 .post-card-box {
-  margin: 30px 0 30px;
+  margin: 30px 0 0px;
   padding: 0;
 }
 
