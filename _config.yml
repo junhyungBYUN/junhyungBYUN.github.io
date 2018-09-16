@@ -9,7 +9,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://junhyungBYUN.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Author settings
-author: BYUN's  blog # add your name
+author: junhyung BYUN # add your name
 author-pic: .jpg
 about-author: My name is junhyung BYUN.
 
