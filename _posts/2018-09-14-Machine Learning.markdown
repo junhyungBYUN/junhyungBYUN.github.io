@@ -7,13 +7,14 @@ img: post-6.jpg # Add image post (optional)
 tags: [Blog, Machine Learning]
 author: junhyung BYUN # Add name author (optional)
 ---
-# Variable Selection / Variable Extraction
-## · Genetic Algorithm
+/* # Variable Selection / Variable Extraction
+/* ## · Genetic Algorithm
 
 
-# Function
-## · 
+/* # Function
+/* ## · 
 
 
-# Parameter Estimation Method
-## ·
+/* # Parameter Estimation Method
+/* ## ·
+
