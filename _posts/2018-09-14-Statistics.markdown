@@ -1,4 +1,4 @@
----
+--
 layout: post
 title:  Statistics
 date:   2018-09-14 23:18:20 +0300
@@ -7,14 +7,4 @@ img: post-4.jpg # Add image post (optional)
 tags: [Blog, Statistics]
 author: junhyung BYUN # Add name author (optional)
 ---
-# Variable Selection / Variable Extraction
-## · Forward Selection
-## · Backward Elimination
-## · Stepwise Selection
-## · Principal Component Analysis
-
-# Function
-## · 
-
-# Parameter Estimation Method
-## · 
+준비중입니다.
