@@ -7,4 +7,15 @@ img: post-2.jpg # Add image post (optional)
 tags: [Blog, Optimization]
 author: junhyung BYUN # Add name author (optional)
 ---
-준비중입니다.
+
+
+# Variable Selection / Variable Extraction
+## · Genetic Algorithm (Meta-Heuristic)
+
+
+# Function
+## · 
+
+
+# Parameter Estimation Method
+## ·
