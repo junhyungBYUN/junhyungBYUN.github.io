@@ -3,17 +3,26 @@ layout: home-page
 기존에 {{post.url | prepend: site.baseurl}} 였음. 참고
 ---
 <ol class="post-card-box clearfix">
-  {% for post in paginator.posts %}
-  <li>
-    <div class="post-card">
-      <a href="{{site.baseurl}}/tags#" class="post-card-image" style="background-image: url( {{ "/assets/img/" | prepend: site.baseurl | append : post.img}} )">
+  <div class="post-card">
+    <a href="{{site.baseurl}}/Machine-Learning-tags" class="post-card-image" style="background-image: url( {{ "/assets/img/" | prepend: site.baseurl | append : post6.img}} )">
+    <a href="{{site.baseurl}}/Deep-Learning-tags" class="post-card-image" style="background-image: url( {{ "/assets/img/" | prepend: site.baseurl | append : post5.img}} )">
+    <a href="{{site.baseurl}}/Statistics-tags" class="post-card-image" style="background-image: url( {{ "/assets/img/" | prepend: site.baseurl | append : post4.img}} )">
+    <a href="{{site.baseurl}}/Linear-Algebra-tags" class="post-card-image" style="background-image: url( {{ "/assets/img/" | prepend: site.baseurl | append : post3.img}} )">
+    <a href="{{site.baseurl}}/Optimization-tags" class="post-card-image" style="background-image: url( {{ "/assets/img/" | prepend: site.baseurl | append : post2.img}} )">
+    <a href="{{site.baseurl}}/Computer-Science-tags" class="post-card-image" style="background-image: url( {{ "/assets/img/" | prepend: site.baseurl | append : post1.img}} )">
+        
       </a>
 
       <div class="post-card-body">
         {% for tag in post.tags %}
         <a href="{{site.baseurl}}/tags#{{tag}}" class="tag">|&#32;{{ tag }}</a>
         {% endfor %}
-        <a href="{{site.baseurl}}/tags#" class="post-card-link"><h3 class="post-card-title">{{post.title}}</h3></a>
+        <a href="{{site.baseurl}}/Machine-Learning-tags" class="post-card-link"><h3 class="post-card-title">{{post.title}}</h3></a>
+        <a href="{{site.baseurl}}/Deep-Learning-tags" class="post-card-link"><h3 class="post-card-title">{{post.title}}</h3></a>
+        <a href="{{site.baseurl}}/Statistics-tags" class="post-card-link"><h3 class="post-card-title">{{post.title}}</h3></a>
+        <a href="{{site.baseurl}}/Linear-Algebra-tags" class="post-card-link"><h3 class="post-card-title">{{post.title}}</h3></a>
+        <a href="{{site.baseurl}}/Optimization-tags" class="post-card-link"><h3 class="post-card-title">{{post.title}}</h3></a>
+        <a href="{{site.baseurl}}/Computer-Science-tags" class="post-card-link"><h3 class="post-card-title">{{post.title}}</h3></a>
       </div>
 
     </div>
