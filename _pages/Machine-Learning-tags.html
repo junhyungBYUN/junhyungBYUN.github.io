@@ -3,8 +3,6 @@ layout: home-page
 title: Machine Learning Tags
 permalink: /Machine-Learning-tags/
 ---
-{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-{% assign tag_words = site_tags | split:',' | sort %}
 
 <section class="blog-tags">
   <h1>Tags in Machine Learning</h1>
