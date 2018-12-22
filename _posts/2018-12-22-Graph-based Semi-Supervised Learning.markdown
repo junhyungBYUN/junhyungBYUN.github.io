@@ -19,7 +19,6 @@ author: junhyung BYUN # Add name author (optional)
 ### 자, 그럼 이제 시작해볼까요?
 
 <br/>
-=========
 <br/>
 
 # Semi-Supervised Learning
@@ -285,7 +284,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 즉, Graph-based Semi-Supervised Learning에서는 기존에 가지고 있는 Data의 label을 추정하는데 수학적으로 항상 명시적인 해가 존재한다는 것을 알 수 있습니다.
 
-### 이제부터는 이러한 이론적 배경을 기반으로 Graph-based Semi-Supervised Learning을 Python으로 구현한 Code를 이해해 보겠습니다.
+### 이제부터는 이러한 이론적 배경을 기반으로 Graph-based Semi-Supervised Learning을 Python으로 구현한 Code를 살펴보겠습니다.
 
 <br/>
 <br/>
