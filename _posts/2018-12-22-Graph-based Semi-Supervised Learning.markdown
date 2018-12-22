@@ -282,7 +282,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_20]({{site.baseurl}}/assets/img/GbSSL_20.png)
 
-### 즉, Graph-based Semi-Supervised Learning에서는 기존에 가지고 있는 Data의 label을 추정하는데 수학적으로 항상 명시적인 해가 존재한다는 것을 알 수 있습니다.
+### 즉, Graph-based Semi-Supervised Learning에서는 기존에 가지고 있는 Data의 label을 추정하는데 수학적으로 항상 명시적인 해(explicit solution)가 존재한다는 것을 알 수 있습니다.
 
 ### 이제부터는 이러한 이론적 배경을 기반으로 Graph-based Semi-Supervised Learning을 Python으로 구현한 Code를 살펴보겠습니다.
 
