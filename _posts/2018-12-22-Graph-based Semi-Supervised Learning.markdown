@@ -305,7 +305,7 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 
 # Python Code for Graph-based Semi-Supervised Learning
-```
+```{.python}
 import os
 import numpy as np
 import numpy.linalg as lin
@@ -316,7 +316,7 @@ from scipy.sparse.linalg import inv
 from scipy.spatial import distance
 ```
 
-```
+```{.python}
 def e_radius(euc, epsilon):
     if epsilon <= 0:
         print('Use epsilon >= 0')
