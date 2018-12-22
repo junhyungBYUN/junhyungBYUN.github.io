@@ -131,7 +131,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_06]({{site.baseurl}}/assets/img/GbSSL_06.png)
 
-# Graph-based Semi-Supervised Learning에서 수학적으로 Label을 추정하는 방법1
+# Graph-based SSL에서 수학적으로 Label을 추정하는 방법1
 
 ### 우리가 알고 싶은 것은 기존에 가지고 있는 Unlabeled Data에 대한 label 값입니다. 
 
@@ -155,4 +155,20 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_08]({{site.baseurl}}/assets/img/GbSSL_08.png)
 
-### 이 되고 우선 실제 label 값 을 고정합니다. 이 말은 기존에 label을 알고 있는 Data는 항상 완벽해서 Noise나 Error가 전혀 없다고 보기 때문에, 기존 label은 반드시 유지해야 한다는 것을 의미합니다. 그러면서 추정하고 싶은 label에 대해서는 0 또는 1의 정수만 가질 수 있는 것을 의미합니다. 즉, 0~1 사이의 실숫값도 허용하지 않고 solution 자체가 0 아니면 1이어야 하는, 엄격한 기준을 세우고 있는 것입니다. 이렇게 두 가지 전제 조건 아래에, 유사도 를 이용한 추정 label의 오차 절대 합이 최소가 되게 하는 것이 목적입니다. 만약 유사도 가 매우 작을 때는 와 의 값의 큰 차이 때문에 비용을 최소화하기 위해 Graph 상에서 cut를 진행하게 됩니다. 즉, 이를 최적화 문제로 바꾸어 해결하면, 
+### 이 되고 우선 실제 label 값 을 고정합니다.
+
+### 이 말은 기존에 label을 알고 있는 Data는 항상 완벽해서 Noise나 Error가 전혀 없다고 보기 때문에, 기존 label은 반드시 유지해야 한다는 것을 의미합니다.
+
+### 그러면서 추정하고 싶은 label에 대해서는 0 또는 1의 정수만 가질 수 있는 것도 의미합니다.
+
+### 즉, 0~1 사이의 실숫값도 허용하지 않고 solution 자체가 0 아니면 1이어야 하는, 엄격한 기준을 세우고 있는 것입니다. 
+
+### 이렇게 두 가지 전제 조건 아래에, 유사도 를 이용한 추정 label의 오차 절대 합이 최소가 되게 하는 것이 목적입니다.
+
+### 만약 유사도 가 매우 작을 때는 와 의 값의 큰 차이 때문에 비용을 최소화하기 위해 Graph 상에서 cut를 진행하게 됩니다. 
+
+### 즉, 이를 최적화 문제로 바꾸어 해결하면, 
+
+![GbSSL_09]({{site.baseurl}}/assets/img/GbSSL_09.png)
+
+### 
