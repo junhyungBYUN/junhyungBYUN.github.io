@@ -36,7 +36,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 각 학습방법을 구분하는 기준은 기계학습을 적용하기 위한 Data의 구성입니다. 
 
-### y변수의 instance가 x변수의 instance 개수만큼 전부 존재하는지, 전부 존재하지 않는지 아니면 일부만 존재하는지에 따라 적용할 수 있는 기계학습 방법이 다릅니다. 
+### y변수의 instance가 x변수의 instance 개수만큼 전부 존재하는지, 전부 존재하지 않는지, 아니면 일부만 존재하는지에 따라 적용할 수 있는 기계학습 방법이 다릅니다. 
 
 ### 그리고 각각의 기준으로 Supervised, Unsupervised, Semi-Supervised Learning으로 나뉩니다. 
 
