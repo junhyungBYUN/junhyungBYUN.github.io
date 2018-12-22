@@ -126,4 +126,12 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_05]({{site.baseurl}}/assets/img/GbSSL_05.png)
 
-### 
+<br/>
+
+![GbSSL_05_2]({{site.baseurl}}/assets/img/GbSSL_05_2.png)
+
+<br/>
+
+![GbSSL_06]({{site.baseurl}}/assets/img/GbSSL_06.png)
+
+# Graph-based Semi-Supervised Learning에서 수학적으로 Label을 추정하는 방법1
