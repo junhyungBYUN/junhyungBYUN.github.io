@@ -214,7 +214,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 그리고 나중에 실제 label을 달 때는 cut-off를 정해서 그 기준으로 label을 확정 짓게 됩니다. 
 
-### 그런데, 이 ‘추정 label part’에 해당하는 계산과정에서 Graph Laplacian Matrix로 비교적 간단하게 계산을 하는 방법을 사용하게 됩니다.
+### 그런데, 이 ‘추정 label part’에 해당하는 계산과정에서 Graph Laplacian Matrix를 사용해서 비교적 간단하게 계산하는 방법을 사용하게 됩니다.
 
 <br/>
 <br/>
