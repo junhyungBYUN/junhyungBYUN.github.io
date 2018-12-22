@@ -306,21 +306,21 @@ author: junhyung BYUN # Add name author (optional)
 
 # Python Code for Graph-based Semi-Supervised Learning
 ```{.python}
-import os
-import numpy as np
-import numpy.linalg as lin
-import pandas as pd
-import matplotlib.pyplot as plt
-from scipy import sparse 
-from scipy.sparse.linalg import inv
-from scipy.spatial import distance
+    import os
+    import numpy as np
+    import numpy.linalg as lin
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    from scipy import sparse 
+    from scipy.sparse.linalg import inv
+    from scipy.spatial import distance
 ```
 
-```{.python}
-def e_radius(euc, epsilon):
-    if epsilon <= 0:
-        print('Use epsilon >= 0')
-        return None
-    e_distance = np.where(euc < epsilon, euc, np.inf)
-    return e_distance
-```    
+
+    def e_radius(euc, epsilon):
+        if epsilon <= 0:
+            print('Use epsilon >= 0')
+            return None
+        e_distance = np.where(euc < epsilon, euc, np.inf)
+        return e_distance
+
