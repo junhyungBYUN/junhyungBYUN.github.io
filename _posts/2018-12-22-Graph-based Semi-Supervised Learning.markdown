@@ -29,9 +29,9 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 그리고 기계학습의 다양한 학습방법 중 대표적인 세 가지 방법을 들면, 아래의 그림과 같이 Supervised Learning과 Unsupervised Learning 그리고 Semi-Supervised Learning을 들 수 있습니다. 
 
-<br/>
+
 ![GbSSL_01]({{site.baseurl}}/assets/img/GbSSL_01.png)
-<br/>
+
 
 ### 기계학습에 필요한 Data는 x변수(독립변수 또는 예측변수 또는 입력변수) 또는 y변수(종속변수 또는 반응변수 또는 출력변수)로 이루어져 있습니다. 
 
