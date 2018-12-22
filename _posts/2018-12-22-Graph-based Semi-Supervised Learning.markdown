@@ -8,6 +8,8 @@ tags: [Blog, Machine Learning]
 author: junhyung BYUN # Add name author (optional)
 ---
 
+
+
 안녕하세요, 이번 포스팅에서는 Graph-based Semi-Supervised Learning에 대해 알아보겠습니다. 
 
 본 내용은 고려대학교 산업경영공학과 강필성 교수님의 강의와 강의자료를 바탕으로 작성됐음을 밝힙니다. 
@@ -18,3 +20,10 @@ author: junhyung BYUN # Add name author (optional)
 
     
 
+# Semi-Supervised Learning
+
+Graph-based Semi-Supervised Learning을 알아보기 전에, 먼저 Semi-Supervised Learning이란 무엇일까요?
+
+Semi-Supervised Learning이란 Machine Learning(기계학습)의 한 학습방법입니다. 
+
+그리고 기계학습의 다양한 학습방법 중 대표적인 세 가지 방법을 들면, 아래의 그림과 같이 Supervised Learning과 Unsupervised Learning 그리고 Semi-Supervised Learning을 들 수 있습니다. 
