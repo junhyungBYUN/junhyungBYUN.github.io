@@ -7,4 +7,4 @@ img: post-5.jpg # Add image post (optional)
 tags: [Blog, Deep Learning]
 author: junhyung BYUN # Add name author (optional)
 ---
-준비중입니다.
+준비중입니까?
