@@ -39,7 +39,6 @@ author: junhyung BYUN # Add name author (optional)
 ### 그리고 각각의 기준으로 Supervised, Unsupervised, Semi-Supervised Learning으로 나뉩니다. 
 
 ### 이때, y변수는 연속형 실숫값이 될 수도 있고 범주형 값이 될 수도 있지만, 본 내용에서는 범주형 값(class label)을 기준으로 설명하겠습니다.
-<br/>
 
 ### Supervised Learning은 label 값들을 전부 알고 있는 상태에서 사용자가 가지고 있는 Data를 충분히 잘 설명하면서 새로운 Data(x변수)에 대해서도 잘 labeling(y instance) 할 수 있는 y=f(x) 모델을 학습하는 방법입니다.
 
