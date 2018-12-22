@@ -17,11 +17,11 @@ author: junhyung BYUN # Add name author (optional)
 또한, 본 내용은 먼저 이론 내용 전체를 살펴본 뒤 그 이론에 대한 독자의 이해를 바탕으로 Python Code를 살펴보는 방식으로 구성돼 있습니다. 
 
 자, 그럼 이제 시작해볼까요?
-###
+
 
     
 
-## Semi-Supervised Learning
+## > Semi-Supervised Learning
 
 Graph-based Semi-Supervised Learning을 알아보기 전에, 먼저 Semi-Supervised Learning이란 무엇일까요?
 
