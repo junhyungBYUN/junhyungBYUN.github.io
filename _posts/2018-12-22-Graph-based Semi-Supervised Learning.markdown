@@ -161,7 +161,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 이 되고 우선 실제 label 값 y_l을 고정합니다.
 
-### 이 말은 기존에 label을 알고 있는 Data는 항상 완벽해서 Noise나 Error가 전혀 없다고 보기 때문에, 기존 label은 반드시 유지해야 한다는 것을 의미합니다.
+### 이 말은 label을 알고 있는 Data는 항상 완벽해서 Noise나 Error가 전혀 없다고 보기 때문에, 기존 label은 반드시 유지해야 한다는 것을 의미합니다.
 
 ### 그러면서 추정하고 싶은 label에 대해서는 0 또는 1의 정수만 가질 수 있는 것도 의미합니다.
 
