@@ -264,7 +264,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### Graph-based SSL에서 수학적으로 Label을 추정하는 방법1과 방법2에서는 모두 ‘기존 label part’에서 실제 label을 그대로 적용했습니다.
 
-### 그런데 사람들은 실제 Data에 대체로 Noise가 많은데, 주어진 label이 항상 옳다고 할 수 있는지에 대해 의문을 갖기 시작했습니다.
+### 그런데 사람들은 실제 Data에 Noise가 있을 수 있기 때문에, 주어진 label이 항상 옳다고 할 수 있는지에 대해 의문을 갖기 시작했습니다.
 
 ### 따라서 ‘기존 label part’의  penalty 조건을 완화하기 시작합니다.
 
