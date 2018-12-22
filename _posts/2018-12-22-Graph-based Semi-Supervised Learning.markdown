@@ -28,10 +28,11 @@ author: junhyung BYUN # Add name author (optional)
 ### Semi-Supervised Learning이란 Machine Learning(기계학습)의 한 학습방법입니다. 
 
 ### 그리고 기계학습의 다양한 학습방법 중 대표적인 세 가지 방법을 들면, 아래의 그림과 같이 Supervised Learning과 Unsupervised Learning 그리고 Semi-Supervised Learning을 들 수 있습니다. 
-
+<br/>
+<br/>
 
 ![GbSSL_01]({{site.baseurl}}/assets/img/GbSSL_01.png)
-
+<br/>
 
 ### 기계학습에 필요한 Data는 x변수(독립변수 또는 예측변수 또는 입력변수) 또는 y변수(종속변수 또는 반응변수 또는 출력변수)로 이루어져 있습니다. 
 
@@ -61,11 +62,8 @@ author: junhyung BYUN # Add name author (optional)
 ### 앞에서 설명했듯이 Semi-Supervised Learning은 ‘새로운’ Data에 대해서 잘 labeling 하는 것에 관심이 있습니다. 
 
 ### 반면에 Transductive Learning은 모델을 학습하는데 사용된 ‘기존’ Data 가운데 label이 없는 Data의 label이 무엇인지에 관심이 있습니다.
-<br/>
-<br/>
 
 ![GbSSL_02]({{site.baseurl}}/assets/img/GbSSL_02.png)
-<br/>
 
 ### Semi-Supervised Learning처럼 labeling 하는 것에 관심이 있는 것은 같지만, 그 대상이 모델을 학습하는데 사용한 label이 없는 Data, 즉 Unlabeled Training Data라는 것이죠. 
 
