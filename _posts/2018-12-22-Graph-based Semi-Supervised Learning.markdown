@@ -286,4 +286,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 이제부터는 이러한 이론적 배경을 기반으로 Graph-based Semi-Supervised Learning을 Python으로 구현한 Code를 이해해 보겠습니다.
 
+<br/>
+<br/>
+
 # Python Code for Graph-based Semi-Supervised Learning
