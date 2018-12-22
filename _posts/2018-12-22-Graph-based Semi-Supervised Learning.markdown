@@ -7,7 +7,8 @@ img: post-6.jpg # Add image post (optional)
 tags: [Blog, Machine Learning]
 author: junhyung BYUN # Add name author (optional)
 ---
-준비중입니다.
+
+Graph-Based Semi-Supervised Learning
 
     
 
