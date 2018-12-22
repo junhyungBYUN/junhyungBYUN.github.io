@@ -262,4 +262,28 @@ author: junhyung BYUN # Add name author (optional)
 
 # Graph-based SSL에서 수학적으로 Label을 추정하는 방법3
 
-### 
+### Graph-based Learning에서 수학적으로 Label을 추정하는 방법1과 방법2에서는 모두 ‘기존 label part’에서 실제 label을 그대로 적용했습니다.
+
+### 그런데 사람들은 실제 Data에 대체로 Noise가 많은데, 주어진 label이 항상 옳다고 할 수 있는지에 대해 의문을 갖기 시작했습니다.
+
+### 따라서 ‘기존 label part’의  penalty 조건을 완화하기 시작합니다.
+
+### 일부 주어진 label들이 틀린 label이면 그것을 보존하는 것보다는 틀림을 인지하고 수정하는 것이 더 좋은 결과물이 될 수 있다고 보기 때문입니다.
+
+### 하지만, 제대로 된 기존 label을 바꾸는 것은 막아야 하므로 penalty 장치를 두게 되고 그 식은 다음과 같습니다.
+
+![GbSSL_19]({{site.baseurl}}/assets/img/GbSSL_19.png)
+
+### 다시 말해서, ‘기존 label part’에서 가 사라져 조건을 완화한 대신, 제대로 된 기존 label을 바꾸는 것은 막기 위해 penalty 를 적용하게 됩니다.
+
+### 이때, 는 크게 할수록 실제 labeled Data의 label은 변할 가능성이 커지고 작게 할수록 실제 label을 보존하는 방향으로 설정됩니다.
+
+### 그리고 이 방법이 가장 현실적으로 생각하고 적용할 수 있는 Graph-based Semi-Supervised Learning 방법이며 이에 대한 solution은 아래와 같습니다.
+
+![GbSSL_20]({{site.baseurl}}/assets/img/GbSSL_20.png)
+
+### 즉, Graph-based Semi-Supervised Learning에서는 기존에 가지고 있는 Data의 label을 추정하는데 수학적으로 항상 명시적인 해가 존재한다는 것을 알 수 있습니다.
+
+### 이제부터는 이러한 이론적 배경을 기반으로 Graph-based Semi-Supervised Learning을 Python으로 구현한 Code를 이해해 보겠습니다.
+
+# Python Code for Graph-based Semi-Supervised Learning
