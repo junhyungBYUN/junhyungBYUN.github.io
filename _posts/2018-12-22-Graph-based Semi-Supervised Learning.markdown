@@ -21,7 +21,7 @@ author: junhyung BYUN # Add name author (optional)
 
     
 
-## > Semi-Supervised Learning
+# *Semi-Supervised Learning
 
 Graph-based Semi-Supervised Learning을 알아보기 전에, 먼저 Semi-Supervised Learning이란 무엇일까요?
 
