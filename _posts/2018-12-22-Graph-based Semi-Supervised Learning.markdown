@@ -30,10 +30,22 @@ Semi-Supervised Learning이란 Machine Learning(기계학습)의 한 학습방�
 
 ![GbSSL_01]({{site.baseurl}}/assets/img/GbSSL_01.png)
 
-기계학습에 필요한 Data는 변수(독립변수 또는 예측변수 또는 입력변수) 또는 변수(종속변수 또는 반응변수 또는 출력변수)로 이루어져 있습니다. 
+기계학습에 필요한 Data는 x변수(독립변수 또는 예측변수 또는 입력변수) 또는 y변수(종속변수 또는 반응변수 또는 출력변수)로 이루어져 있습니다. 
 
-각 학습방법을 구분하는 기준은 기계학습을 적용하기 위한 Data의 구성입니다. 변수의 instance가 변수의 instance 개수만큼 전부 존재하는지, 전부 존재하지 않는지 아니면 일부만 존재하는지에 따라 적용할 수 있는 기계학습 방법이 다릅니다. 
+각 학습방법을 구분하는 기준은 기계학습을 적용하기 위한 Data의 구성입니다. 
+
+y변수의 instance가 x변수의 instance 개수만큼 전부 존재하는지, 전부 존재하지 않는지 아니면 일부만 존재하는지에 따라 적용할 수 있는 기계학습 방법이 다릅니다. 
 
 그리고 각각의 기준으로 Supervised, Unsupervised, Semi-Supervised Learning으로 나뉩니다. 
 
-이때, 변수는 연속형 실숫값이 될 수도 있고 범주형 값이 될 수도 있지만, 본 내용에서는 범주형 값(class label)을 기준으로 설명하겠습니다.
+이때, y변수는 연속형 실숫값이 될 수도 있고 범주형 값이 될 수도 있지만, 본 내용에서는 범주형 값(class label)을 기준으로 설명하겠습니다.
+
+Supervised Learning은 label 값들을 전부 알고 있는 상태에서 사용자가 가지고 있는 Data를 충분히 잘 설명하면서 새로운 Data(x변수)에 대해서도 잘 labeling(y instance) 할 수 있는 y=f(x) 모델을 학습하는 방법입니다.
+
+Unsupervised Learning은 label을 전부 모르기 때문에, 사용자가 가지고 있는 Data의 내재적인 속성을 학습하여 label을 찾을 때 사용하기도 합니다. 
+
+마지막으로 Semi-Supervised Learning은 Supervised Learning처럼 label이 없는 새로운 Data에 대해서 잘 labeling 하는 y=f(x) 모델을 학습하는 방법입니다만, 학습할 때 label이 없는 기존의 Data도 Input으로 함께 활용합니다. 그리고 어떻게 활용하면 Supervised Learning의 성능이 향상될지를 고민하게 됩니다. 즉, label이 없는 기존의 Data라도 그 Data들을 학습 과정에 추가하면 무엇인가 조금 더 좋아지지 않을까? 라는 기대에서 시작된 것입니다.
+
+<br/>
+<br/>
+# Semi-Supervised Learning vs. Transductive Learning
