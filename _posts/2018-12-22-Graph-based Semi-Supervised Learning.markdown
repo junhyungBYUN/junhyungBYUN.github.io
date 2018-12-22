@@ -208,4 +208,43 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_12]({{site.baseurl}}/assets/img/GbSSL_12.png)
 
-### 으로 바뀌게 됩니다. 두 Node 와 의 label이 항상 0 또는 1은 아니어도 되지만, 유사성이 높을수록 Harmonic function 값이 반영된  실숫값과  실숫값이 서로 유사해야 합니다. 그리고 나중에 실제 label을 달 때는 cut-off를 정해서 그 기준으로 label을 확정 짓게 됩니다. 그런데, 이 ‘추정 label part’에 해당하는 계산과정에서 Graph Laplacian Matrix로 비교적 간단하게 계산을 하는 방법을 사용하게 됩니다.
+### 으로 바뀌게 됩니다. 
+
+### 두 Node 와 의 label이 항상 0 또는 1은 아니어도 되지만, 유사성이 높을수록 Harmonic function 값이 반영된 실숫값과 실숫값이 서로 유사해야 합니다. 
+
+### 그리고 나중에 실제 label을 달 때는 cut-off를 정해서 그 기준으로 label을 확정 짓게 됩니다. 
+
+### 그런데, 이 ‘추정 label part’에 해당하는 계산과정에서 Graph Laplacian Matrix로 비교적 간단하게 계산을 하는 방법을 사용하게 됩니다.
+
+<br/>
+<br/>
+
+# Graph Laplacian Matrix
+
+### label이 있는 Data의 개수는 l이고 label 없는 Data의 개수는 u이므로 모든 Data의 개수는 l+u가 됩니다.
+
+### 지금부터 설명할 대부분의 Matrix는 행 또는 열이 모두 l+u인 행렬들로, label을 추정하는 두 번째 방법에서, ‘추정 label part’에 해당하는 식을 간단하게 계산하기 위해 다음 과정의 행렬들을 계산합니다.
+
+![GbSSL_13]({{site.baseurl}}/assets/img/GbSSL_13.png)
+
+### 즉, Graph Laplacian Matrix를 구해서 ‘추정 label part’를 계산하면,
+
+![GbSSL_14]({{site.baseurl}}/assets/img/GbSSL_14.png)
+
+### 이 됩니다.
+
+### 예를 들어 아래의 Graph(Node의 숫자는 각 Node의 label이 아닌 Node 번호)를 갖는 경우,
+
+![GbSSL_15]({{site.baseurl}}/assets/img/GbSSL_15.png)
+
+### 먼저 유사도 행렬 를 Node간 연결이 된 경우에는 1, 그렇지 않으면 0인 Adjacency 방식으로 계산합니다.
+
+### 이어서 이 의 열별 유사도의 합을 계산하여 Diagonal Degree Matrix D를 구하여 최종적으로 Graph Laplacian Matrix를 계산합니다.
+
+### 이때, ‘추정 label part’ 식은
+
+![GbSSL_16]({{site.baseurl}}/assets/img/GbSSL_16.png)
+
+### 으로 표현할 수 있는 것을 확인할 수 있습니다.
+
+### 한편, ‘추정 label part’의 Graph Laplacian Matrix를 이용해서 실제로 우리가 알고 싶은 label의 추정값() 부분만을 바로 쉽게 계산할 수 있습니다. 바로 Partition Laplacian Matrix를 사용하는 것인데요, 이제부터 살펴보겠습니다. 
