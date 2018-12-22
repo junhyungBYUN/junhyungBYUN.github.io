@@ -29,7 +29,6 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 그리고 기계학습의 다양한 학습방법 중 대표적인 세 가지 방법을 들면, 아래의 그림과 같이 Supervised Learning과 Unsupervised Learning 그리고 Semi-Supervised Learning을 들 수 있습니다. 
 <br/>
-
 ![GbSSL_01]({{site.baseurl}}/assets/img/GbSSL_01.png)
 <br/>
 
@@ -126,11 +125,9 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_05]({{site.baseurl}}/assets/img/GbSSL_05.png)
 
-<br/>
 
 ![GbSSL_05_2]({{site.baseurl}}/assets/img/GbSSL_05_2.png)
 
-<br/>
 
 ![GbSSL_06]({{site.baseurl}}/assets/img/GbSSL_06.png)
 
