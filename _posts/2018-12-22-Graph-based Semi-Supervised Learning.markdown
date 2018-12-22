@@ -114,4 +114,19 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_04]({{site.baseurl}}/assets/img/GbSSL_04.png)
 
-이처럼 Graph-based Learning의 가정은 두 Node가 유사하면(Edge 굵기가 굵으면, heavy Edge) 근처의 유사한 Node의 label과 동일한 label을 갖는 것이 합당하다는 것입니다. 이를 통해 기존의 Unlabeled Data의 Label이 무엇인지(Transductive Learning)를 추정하게 됩니다. 
+### 이처럼 Graph-based Learning의 가정은 두 Node가 유사하면(Edge 굵기가 굵으면, heavy Edge) 근처의 유사한 Node의 label과 동일한 label을 갖는 것이 합당하다는 것입니다. 
+
+### 이를 통해 기존의 Unlabeled Data의 Label이 무엇인지(Transductive Learning)를 추정하게 됩니다. 
+
+<br/>
+<br/>
+
+# 수학적 기호 정의와 Graph 종류 및 유사도 가중치 계산방식
+
+### 그렇다면 실제로 Unlabeled Data에 대해 label을 찾기 위한 수학적 알고리즘은 어떻게 될까요?
+
+### 이를 위해 우선 Graph에서의 Node와 Edge를 위한 수학적 정의를 먼저 내리게 됩니다.
+
+![GbSSL_05]({{site.baseurl}}/assets/img/GbSSL_05.png)
+
+### 
