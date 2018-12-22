@@ -52,6 +52,8 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 즉, label이 없는 기존의 Data라도 그 Data들을 학습 과정에 추가하면 무엇인가 조금 더 좋아지지 않을까? 라는 기대에서 시작된 것입니다.
 
+---
+
 <br/>
 <br/>
 
@@ -68,6 +70,8 @@ author: junhyung BYUN # Add name author (optional)
 ### 이처럼 두 방법은 서로 다른 개념이지만, 많은 사람들이 두 학습방법을 섞어 쓰기 시작하면서 그 경계가 허물어졌다고 합니다. 
 
 ### 그럼에도 불구하고 두 방법을 엄밀히 구분하여 설명한 이유는, Graph-based Semi-Supervised Learning이 Transductive Learning이기 때문입니다.
+
+---
 
 <br/>
 <br/>
@@ -114,6 +118,8 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 이를 통해 기존의 Unlabeled Data의 Label이 무엇인지(Transductive Learning)를 추정하게 됩니다. 
 
+---
+
 <br/>
 <br/>
 
@@ -131,6 +137,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_06]({{site.baseurl}}/assets/img/GbSSL_06.png)
 
+---
 
 <br/>
 <br/>
@@ -193,6 +200,8 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 물론 이때, y_i 또는 y_j가 가질 수 있는 값은 0과 1뿐입니다.
 
+---
+
 <br/>
 <br/>
 
@@ -215,6 +224,8 @@ author: junhyung BYUN # Add name author (optional)
 ### 그리고 나중에 실제 label을 달 때는 cut-off를 정해서 그 기준으로 label을 확정 짓게 됩니다. 
 
 ### 그런데, 이 ‘추정 label part’에 해당하는 계산과정에서 Graph Laplacian Matrix를 사용해서 비교적 간단하게 계산하는 방법을 사용하게 됩니다.
+
+---
 
 <br/>
 <br/>
@@ -257,6 +268,8 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_18]({{site.baseurl}}/assets/img/GbSSL_18.png)
 
+---
+
 <br/>
 <br/>
 
@@ -286,7 +299,19 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 이제부터는 이러한 이론적 배경을 기반으로 Graph-based Semi-Supervised Learning을 Python으로 구현한 Code를 살펴보겠습니다.
 
+---
+
 <br/>
 <br/>
 
 # Python Code for Graph-based Semi-Supervised Learning
+```
+import os
+import numpy as np
+import numpy.linalg as lin
+import pandas as pd
+import matplotlib.pyplot as plt
+from scipy import sparse 
+from scipy.sparse.linalg import inv
+from scipy.spatial import distance
+```
