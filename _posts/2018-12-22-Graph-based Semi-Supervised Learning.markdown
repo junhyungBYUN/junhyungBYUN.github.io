@@ -159,7 +159,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_08]({{site.baseurl}}/assets/img/GbSSL_08.png)
 
-### 이 되고 우선 실제 label 값 을 고정합니다.
+### 이 되고 우선 실제 label 값 y_l을 고정합니다.
 
 ### 이 말은 기존에 label을 알고 있는 Data는 항상 완벽해서 Noise나 Error가 전혀 없다고 보기 때문에, 기존 label은 반드시 유지해야 한다는 것을 의미합니다.
 
@@ -167,9 +167,9 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 즉, 0~1 사이의 실숫값도 허용하지 않고 solution 자체가 0 아니면 1이어야 하는, 엄격한 기준을 세우고 있는 것입니다. 
 
-### 이렇게 두 가지 전제 조건 아래에, 유사도 를 이용한 추정 label의 오차 절대 합이 최소가 되게 하는 것이 목적입니다.
+### 이렇게 두 가지 전제 조건 아래에, 유사도 w를 이용한 추정 label의 오차 절대 합이 최소가 되게 하는 것이 목적입니다.
 
-### 만약 유사도 가 매우 작을 때는 와 의 값의 큰 차이 때문에 비용을 최소화하기 위해 Graph 상에서 cut를 진행하게 됩니다. 
+### 만약 유사도 w가 매우 작을 때는 y_i와 y_j의 값의 큰 차이 때문에 비용을 최소화하기 위해 Graph 상에서 cut를 진행하게 됩니다. 
 
 ### 즉, 이를 최적화 문제로 바꾸어 해결하면, 
 
@@ -181,17 +181,17 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 왜냐하면, 각각 기존 label과 추정 label에 해당하기 때문입니다.
 
-### 우선, 1번 part에 해당하는 ‘기존 label part’는 추정 label 와 정답 label 가 모두 같으면 0, 하나라도 다르면  penalty를 부여하는 것을 의미합니다.
+### 우선, 1번 part에 해당하는 ‘기존 label part’는 추정 label y_i와 정답 label y_li가 모두 같으면 0, 하나라도 다르면 ∞ penalty를 부여하는 것을 의미합니다.
 
 ### 즉, 추정된 label과 정답 label이 조금이라도 다른 것을 허용하지 않겠다는 뜻입니다.
 
-### 앞에서 기존 label 은 모두 완벽하다고 보고 그 값들을 모두 고정한 것과 일맥상통하는 대목입니다.
+### 앞에서 기존 label y_l은 모두 완벽하다고 보고 그 값들을 모두 고정한 것과 일맥상통하는 대목입니다.
 
 ### 다음으로 2번 part에 해당하는 ‘추정 label part’는 서로 근처에 있고 유사한 Node들이면 그 Node들 사이의 label은, 최대한 같은 값이 되도록 만들라는 뜻입니다.
 
 ### 유사도가 클수록 근처의 Node들은 label이 서로 같아야 한다고 보는 Graph-based Learning의 가정을 담고 있다고 할 수 있습니다.
 
-### 물론 이때,  또는 가 가질 수 있는 값은 0과 1뿐입니다.
+### 물론 이때, y_i 또는 y_j가 가질 수 있는 값은 0과 1뿐입니다.
 
 <br/>
 <br/>
@@ -204,13 +204,13 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 즉, 추정하려는 label이 항상 0 아니면 1이어야 한다는 정수 가정을 실수 가정으로 바꿔 완화하는 방법입니다.
 
-### 이를 위해, Harmonic function 을 사용합니다. 즉, 
+### 이를 위해, Harmonic function f(x_i)=y_i를 사용합니다. 즉, 
 
 ![GbSSL_12]({{site.baseurl}}/assets/img/GbSSL_12.png)
 
 ### 으로 바뀌게 됩니다. 
 
-### 두 Node 와 의 label이 항상 0 또는 1은 아니어도 되지만, 유사성이 높을수록 Harmonic function 값이 반영된 실숫값과 실숫값이 서로 유사해야 합니다. 
+### 두 Node i와 j의 label이 항상 0 또는 1은 아니어도 되지만, 유사성이 높을수록 Harmonic function 값이 반영된 f(x_i)실숫값과 f(x_j)실숫값이 서로 유사해야 합니다. 
 
 ### 그리고 나중에 실제 label을 달 때는 cut-off를 정해서 그 기준으로 label을 확정 짓게 됩니다. 
 
@@ -239,7 +239,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 먼저 유사도 행렬 W를 Node간 연결이 된 경우에는 1, 그렇지 않으면 0인 방식(Adjacency Matrix)으로 계산합니다.
 
-### 이어서 이 의 열별 유사도의 합을 계산하여 Diagonal Degree Matrix D를 구하여 최종적으로 Graph Laplacian Matrix를 계산합니다.
+### 이어서 이 W의 열별 유사도의 합을 계산하여 Diagonal Degree Matrix D를 구하여 최종적으로 Graph Laplacian Matrix를 계산합니다.
 
 ### 이때, ‘추정 label part’ 식은
 
@@ -247,7 +247,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 으로 표현할 수 있는 것을 확인할 수 있습니다.
 
-### 한편, ‘추정 label part’의 Graph Laplacian Matrix를 이용해서 실제로 우리가 알고 싶은 label의 추정값() 부분만을 쉽게 계산할 수 있습니다.
+### 한편, ‘추정 label part’의 Graph Laplacian Matrix를 이용해서 실제로 우리가 알고 싶은 label의 추정값(f_u) 부분만을 쉽게 계산할 수 있습니다.
 
 ### 바로 Partition Laplacian Matrix를 사용하는 것인데요, 이제부터 살펴보겠습니다. 
 
@@ -266,7 +266,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 그런데 사람들은 실제 Data에 Noise가 있을 수 있기 때문에, 주어진 label이 항상 옳다고 할 수 있는지에 대해 의문을 갖기 시작했습니다.
 
-### 따라서 ‘기존 label part’의  penalty 조건을 완화하기 시작합니다.
+### 따라서 ‘기존 label part’의 ∞ penalty 조건을 완화하기 시작합니다.
 
 ### 일부 주어진 label들이 틀린 label이면 그것을 보존하는 것보다는 틀림을 인지하고 수정하는 것이 더 좋은 결과물이 될 수 있다고 보기 때문입니다.
 
@@ -274,9 +274,9 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_19]({{site.baseurl}}/assets/img/GbSSL_19.png)
 
-### 다시 말해서, ‘기존 label part’에서 가 사라져 조건을 완화한 대신, 제대로 된 기존 label을 바꾸는 것은 막기 위해 penalty 를 적용하게 됩니다.
+### 다시 말해서, ‘기존 label part’에서 ∞가 사라져 조건을 완화한 대신, 제대로 된 기존 label을 바꾸는 것은 막기 위해 penalty λ를 적용하게 됩니다.
 
-### 이때, 는 크게 할수록 실제 labeled Data의 label은 변할 가능성이 커지고 작게 할수록 실제 label을 보존하는 방향으로 설정됩니다.
+### 이때, λ는 크게 할수록 실제 labeled Data의 label은 변할 가능성이 커지고 작게 할수록 실제 label을 보존하는 방향으로 설정됩니다.
 
 ### 그리고 이 방법이 가장 현실적으로 생각하고 적용할 수 있는 Graph-based Semi-Supervised Learning 방법이며 이에 대한 solution은 아래와 같습니다.
 
