@@ -7,12 +7,9 @@ img: post-7.png # Add image post (optional)
 tags: [Blog, Machine Learning]
 author: junhyung BYUN # Add name author (optional)
 ---
-<p> 
-
-
-
-
-</p>
+<br/>
+<br/>
+<br/>
 
 안녕하세요, 이번 포스팅에서는 Graph-based Semi-Supervised Learning에 대해 알아보겠습니다. 
 
@@ -22,12 +19,9 @@ author: junhyung BYUN # Add name author (optional)
 
 자, 그럼 이제 시작해볼까요?
 
-<p> 
-
-
-
-
-</p>
+<br/>
+<br/>
+<br/>
 
 # Semi-Supervised Learning
 
