@@ -29,7 +29,9 @@ Graph-based Semi-Supervised Learning을 알아보기 전에, 먼저 Semi-Supervi
 Semi-Supervised Learning이란 Machine Learning(기계학습)의 한 학습방법입니다. 
 
 그리고 기계학습의 다양한 학습방법 중 대표적인 세 가지 방법을 들면, 아래의 그림과 같이 Supervised Learning과 Unsupervised Learning 그리고 Semi-Supervised Learning을 들 수 있습니다. 
-GbSSL_01.png
+
+![GbSSL_01]({{site.baseurl}}/assets/img/GbSSL_01.png)
+
 기계학습에 필요한 Data는 변수(독립변수 또는 예측변수 또는 입력변수) 또는 변수(종속변수 또는 반응변수 또는 출력변수)로 이루어져 있습니다. 
 
 각 학습방법을 구분하는 기준은 기계학습을 적용하기 위한 Data의 구성입니다. 변수의 instance가 변수의 instance 개수만큼 전부 존재하는지, 전부 존재하지 않는지 아니면 일부만 존재하는지에 따라 적용할 수 있는 기계학습 방법이 다릅니다. 
