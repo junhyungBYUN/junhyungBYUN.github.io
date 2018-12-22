@@ -94,7 +94,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 하지만 이때, x1 Node에서 x3 Node로 바로 추정하는 것이 아닙니다.
 
-### 먼저 x1 Node의 오른쪽에 연결된 유사성이 큰 Node의 label을 먼저 추정합니다. 
+### 먼저 x1 Node의 오른쪽에 연결된 유사도가 큰 Node의 label을 먼저 추정합니다. 
 
 ### 그리고 추정한 그 Node의 label을 가지고 굵은 선을 따라 또다시 바로 오른쪽의 Node의 label을 추정합니다.
 
@@ -102,7 +102,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 즉, x1 Node에서 x3로 한 번에 label을 추정하긴 어렵지만, 바로 옆의 유사한 Node를 통해 한 다리씩 건너서 추정하면(Indirect) 알고 싶은 label을 추정할 수 있습니다. 
 
-### 따라서 유사성은 Direct로 추정하기보다는 기본적으로 Indirect 방법으로 추정한다는 것을 알 수 있습니다. 
+### 따라서 유사도는 Direct로 추정하기보다는 기본적으로 Indirect 방법으로 추정한다는 것을 알 수 있습니다. 
 
 ### 그리고 label을 전파한다고 해서 label propagation으로 부르기도 합니다. 
 
@@ -210,7 +210,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 으로 바뀌게 됩니다. 
 
-### 두 Node i와 j의 label이 항상 0 또는 1은 아니어도 되지만, 유사성이 높을수록 Harmonic function 값이 반영된 f(x_i)실숫값과 f(x_j)실숫값이 서로 유사해야 합니다. 
+### 두 Node i와 j의 label이 항상 0 또는 1은 아니어도 되지만, 유사도가 높을수록 Harmonic function 값이 반영된 f(x_i)실숫값과 f(x_j)실숫값이 서로 유사해야 합니다. 
 
 ### 그리고 나중에 실제 label을 달 때는 cut-off를 정해서 그 기준으로 label을 확정 짓게 됩니다. 
 
