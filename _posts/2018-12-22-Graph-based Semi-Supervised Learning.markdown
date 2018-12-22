@@ -21,7 +21,7 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 
 # Semi-Supervised Learning
-<br/>
+
 Graph-based Semi-Supervised Learning을 알아보기 전에, 먼저 Semi-Supervised Learning이란 무엇일까요?
 
 Semi-Supervised Learning이란 Machine Learning(기계학습)의 한 학습방법입니다. 
