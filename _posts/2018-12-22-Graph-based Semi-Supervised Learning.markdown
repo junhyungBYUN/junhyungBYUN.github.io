@@ -87,7 +87,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 그리고 Node 간 연결된 선들을 Edge라고 하는데, 이는 Node 간 유사도(similarity)를 나타냅니다. 
 
-### 그리고 사용하는 Graph의 유사도 조건을 충족해야 Node가 연결되고, 연결된 Node 간 유사도가 클수록 굵은 선으로 나타냅니다. 
+### 사용하는 Graph의 유사도 조건을 충족해야 Node가 연결되고, 연결된 Node 간 유사도가 클수록 굵은 선으로 나타냅니다. 
 
 ### 예를 들어, 이미 label이 있는 x1과 x2는 서로 다른 label이기 때문에 Node 간 연결돼 있지 않습니다. 
 
