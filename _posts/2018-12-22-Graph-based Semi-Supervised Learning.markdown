@@ -19,6 +19,7 @@ author: junhyung BYUN # Add name author (optional)
 ### 자, 그럼 이제 시작해볼까요?
 
 <br/>
+<br/>
 
 # Semi-Supervised Learning
 
@@ -54,6 +55,7 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 
 # Semi-Supervised Learning vs. Transductive Learning
+
 ### 앞에서 설명했듯이 Semi-Supervised Learning은 ‘새로운’ Data에 대해서 잘 labeling 하는 것에 관심이 있습니다. 
 
 ### 반면에 Transductive Learning은 모델을 학습하는데 사용된 ‘기존’ Data 가운데 label이 없는 Data의 label이 무엇인지에 관심이 있습니다.
@@ -70,3 +72,41 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 
 # Dataset의 Graph Node 화 및 Node 간 Indirect 연결 방식
+
+### 먼저 아래의 그림을 보면,
+
+![GbSSL_03]({{site.baseurl}}/assets/img/GbSSL_03.png)
+
+### 주어진 왼쪽의 Data Set에서 instance 단위로 오른쪽 Graph의 Node에 할당되는 것을 알 수 있습니다. 
+
+### 이는 각각의 instance를 Graph에서 Node로 표현하는 방식임을 알 수 있습니다. 
+
+### 이때, label 값이 있는 instance는 해당 label의 값이 Node에 나타나고 label 값이 없는 instance는 label 값이 없는 빈 Node로 남게 됩니다. 
+
+### 그리고 Node 간 연결된 선들을 Edge라고 하는데, 이는 Node 간 유사도(similarity)를 나타냅니다. 
+
+### 그리고 사용하는 Graph의 유사도 조건을 충족해야 Node가 연결되고, 연결된 Node 간 유사도가 클수록 굵은 선으로 나타냅니다. 
+
+### 예를 들어, 이미 label이 있는 x1과 x2는 서로 다른 label이기 때문에 Node 간 연결돼 있지 않습니다. 
+
+### 반면에 label이 없는 x3 Node의 label을 추정하는데, +1 label 값을 갖는 x1 Node로부터 시작해서 굵은 선을 따라 추정하게 됩니다. 
+
+### 하지만 이때, x1 Node에서 x3 Node로 바로 추정하는 것이 아닙니다.
+
+### 먼저 x1 Node의 오른쪽에 연결된 유사성이 큰 Node의 label을 먼저 추정합니다. 
+
+### 그리고 추정한 그 Node의 label을 가지고 굵은 선을 따라 또다시 바로 오른쪽의 Node의 label을 추정합니다.
+
+### 이런 식으로 연속해서 결국 x3 Node의 label을 추정하게 됩니다. 
+
+### 즉, x1 Node에서 x3로 한 번에 label을 추정하긴 어렵지만, 바로 옆의 유사한 Node를 통해 한 다리씩 건너서 추정하면(Indirect) 알고 싶은 label을 추정할 수 있습니다. 
+
+### 따라서 유사성은 Direct로 추정하기보다는 기본적으로 Indirect 방법으로 추정한다는 것을 알 수 있습니다. 
+
+### 그리고 label을 전파한다고 해서 label propagation으로 부르기도 합니다. 
+
+### 이와 관련된 예시는 아래의 손글씨 인식 그림을 통해서도 확인할 수 있습니다.
+
+![GbSSL_04]({{site.baseurl}}/assets/img/GbSSL_04.png)
+
+이처럼 Graph-based Learning의 가정은 두 Node가 유사하면(Edge 굵기가 굵으면, heavy Edge) 근처의 유사한 Node의 label과 동일한 label을 갖는 것이 합당하다는 것입니다. 이를 통해 기존의 Unlabeled Data의 Label이 무엇인지(Transductive Learning)를 추정하게 됩니다. 
