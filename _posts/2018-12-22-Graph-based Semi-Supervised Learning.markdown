@@ -171,4 +171,34 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_09]({{site.baseurl}}/assets/img/GbSSL_09.png)
 
-### 
+### 로 바꿔서 풀 수 있습니다.
+
+### 그리고 이때 위의 그림대로 최소화할 각 항을 1번 part와 2번 part로 나누어 생각해볼 수 있습니다.
+
+### 왜냐하면, 각각 기존 label과 추정 label에 해당하기 때문입니다.
+
+### 우선, 1번 part에 해당하는 ‘기존 label part’는 추정 label 와 정답 label 가 모두 같으면 0, 하나라도 다르면  penalty를 부여하는 것을 의미합니다.
+
+### 즉, 추정된 label과 정답 label이 조금이라도 다른 것을 허용하지 않겠다는 뜻입니다.
+
+### 앞에서 기존 label 은 모두 완벽하다고 보고 그 값들을 모두 고정한 것과 일맥상통하는 대목입니다.
+
+### 다음으로 2번 part에 해당하는 ‘추정 label part’는 서로 근처에 있고 유사한 Node들이면 그 Node들 사이의 label은, 최대한 같은 값이 되도록 만들라는 뜻입니다.
+
+### 유사도가 클수록 근처의 Node들은 label이 서로 같아야 한다고 보는 Graph-based Learning의 가정을 담고 있다고 할 수 있습니다.
+
+### 물론 이때,  또는 가 가질 수 있는 값은 0과 1뿐입니다.
+
+# Graph-based SSL에서 수학적으로 Label을 추정하는 방법2
+
+![GbSSL_10]({{site.baseurl}}/assets/img/GbSSL_10.png)
+
+### 이번에는 Label을 추정하는 방법1에서 ‘추정 label part’에 해당하는 조건을 완화하여 label을 추정하는 방법입니다.
+
+### 즉, 추정하려는 label이 항상 0 아니면 1이어야 한다는 정수 가정을 실수 가정으로 바꿔 완화하는 방법입니다.
+
+### 이를 위해, Harmonic function 을 사용합니다. 즉, 
+
+![GbSSL_11]({{site.baseurl}}/assets/img/GbSSL_11.png)
+
+### 으로 바뀌게 됩니다. 두 Node 와 의 label이 항상 0 또는 1은 아니어도 되지만, 유사성이 높을수록 Harmonic function 값이 반영된  실숫값과  실숫값이 서로 유사해야 합니다. 그리고 나중에 실제 label을 달 때는 cut-off를 정해서 그 기준으로 label을 확정 짓게 됩니다. 그런데, 이 ‘추정 label part’에 해당하는 계산과정에서 Graph Laplacian Matrix로 비교적 간단하게 계산을 하는 방법을 사용하게 됩니다.
