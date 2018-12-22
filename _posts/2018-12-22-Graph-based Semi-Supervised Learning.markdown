@@ -13,6 +13,7 @@ author: junhyung BYUN # Add name author (optional)
 
 
 </p>
+
 안녕하세요, 이번 포스팅에서는 Graph-based Semi-Supervised Learning에 대해 알아보겠습니다. 
 
 본 내용은 고려대학교 산업경영공학과 강필성 교수님의 강의와 강의자료를 바탕으로 작성됐음을 밝힙니다. 
@@ -27,6 +28,7 @@ author: junhyung BYUN # Add name author (optional)
 
 
 </p>
+
 # Semi-Supervised Learning
 
 Graph-based Semi-Supervised Learning을 알아보기 전에, 먼저 Semi-Supervised Learning이란 무엇일까요?
