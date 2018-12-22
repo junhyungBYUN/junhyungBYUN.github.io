@@ -57,3 +57,19 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 
 # Semi-Supervised Learning vs. Transductive Learning
+### 앞에서 설명했듯이 Semi-Supervised Learning은 ‘새로운’ Data에 대해서 잘 labeling 하는 것에 관심이 있습니다. 
+
+### 반면에 Transductive Learning은 모델을 학습하는데 사용된 ‘기존’ Data 가운데 label이 없는 Data의 label이 무엇인지에 관심이 있습니다.
+
+![GbSSL_02]({{site.baseurl}}/assets/img/GbSSL_02.png)
+
+### Semi-Supervised Learning처럼 labeling 하는 것에 관심이 있는 것은 같지만, 그 대상이 모델을 학습하는데 사용한 label이 없는 Data, 즉 Unlabeled Training Data라는 것이죠. 
+
+### 이처럼 두 방법은 서로 다른 개념이지만, 많은 사람들이 두 학습방법을 섞어 쓰기 시작하면서 그 경계가 허물어졌다고 합니다. 
+
+### 그럼에도 불구하고 두 방법을 엄밀히 구분하여 설명한 이유는, Graph-based Semi-Supervised Learning이 Transductive Learning이기 때문입니다.
+
+<br/>
+<br/>
+
+# Dataset의 Graph Node 화 및 Node 간 Indirect 연결 방식
