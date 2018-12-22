@@ -49,10 +49,14 @@ include: [_pages]
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "package-lock.json", "assets/css/sass/"]
 
 
-# hexo mathjax
 math:
   engine: 'mathjax' # or 'katex'
   mathjax:
-    src: "//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"
+    src: custom_mathjax_source
     config:
       # MathJax config
+  katex:
+    css: custom_css_source
+    js: custom_js_source # not used
+    config:
+      # KaTeX config
