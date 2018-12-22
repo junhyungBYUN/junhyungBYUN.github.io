@@ -247,4 +247,19 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 으로 표현할 수 있는 것을 확인할 수 있습니다.
 
-### 한편, ‘추정 label part’의 Graph Laplacian Matrix를 이용해서 실제로 우리가 알고 싶은 label의 추정값() 부분만을 바로 쉽게 계산할 수 있습니다. 바로 Partition Laplacian Matrix를 사용하는 것인데요, 이제부터 살펴보겠습니다. 
+### 한편, ‘추정 label part’의 Graph Laplacian Matrix를 이용해서 실제로 우리가 알고 싶은 label의 추정값() 부분만을 바로 쉽게 계산할 수 있습니다.
+
+### 바로 Partition Laplacian Matrix를 사용하는 것인데요, 이제부터 살펴보겠습니다. 
+
+![GbSSL_17]({{site.baseurl}}/assets/img/GbSSL_17.png)
+
+### 그리고 Partition Laplacian를 적용하기 위해 ‘추정 label part’를 Harmonic Function Vector f에 대해 미분하면,
+
+![GbSSL_18]({{site.baseurl}}/assets/img/GbSSL_18.png)
+
+<br/>
+<br/>
+
+# Graph-based SSL에서 수학적으로 Label을 추정하는 방법3
+
+### 
