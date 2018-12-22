@@ -131,6 +131,10 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_06]({{site.baseurl}}/assets/img/GbSSL_06.png)
 
+
+<br/>
+<br/>
+
 # Graph-based SSL에서 수학적으로 Label을 추정하는 방법1
 
 ### 우리가 알고 싶은 것은 기존에 가지고 있는 Unlabeled Data에 대한 label 값입니다. 
@@ -188,6 +192,9 @@ author: junhyung BYUN # Add name author (optional)
 ### 유사도가 클수록 근처의 Node들은 label이 서로 같아야 한다고 보는 Graph-based Learning의 가정을 담고 있다고 할 수 있습니다.
 
 ### 물론 이때,  또는 가 가질 수 있는 값은 0과 1뿐입니다.
+
+<br/>
+<br/>
 
 # Graph-based SSL에서 수학적으로 Label을 추정하는 방법2
 
