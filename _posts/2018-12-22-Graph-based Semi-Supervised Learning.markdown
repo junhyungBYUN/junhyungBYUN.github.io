@@ -237,7 +237,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_15]({{site.baseurl}}/assets/img/GbSSL_15.png)
 
-### 먼저 유사도 행렬 를 Node간 연결이 된 경우에는 1, 그렇지 않으면 0인 Adjacency 방식으로 계산합니다.
+### 먼저 유사도 행렬 W를 Node간 연결이 된 경우에는 1, 그렇지 않으면 0인 방식(Adjacency Matrix)으로 계산합니다.
 
 ### 이어서 이 의 열별 유사도의 합을 계산하여 Diagonal Degree Matrix D를 구하여 최종적으로 Graph Laplacian Matrix를 계산합니다.
 
