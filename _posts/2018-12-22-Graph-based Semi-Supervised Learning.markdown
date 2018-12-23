@@ -138,13 +138,14 @@ author: junhyung BYUN # Add name author (optional)
 ### 이를 위해 우선 Graph에서의 Node와 Edge를 위한 수학적 정의를 먼저 내리게 됩니다.
 
 ![GbSSL_05]({{site.baseurl}}/assets/img/GbSSL_05.png)
-
+<center>Semi-Supervised Learning에서의 Notation 정의</center>
+<br/>
 
 ![GbSSL_05_2]({{site.baseurl}}/assets/img/GbSSL_05_2.png)
 
 
 ![GbSSL_06]({{site.baseurl}}/assets/img/GbSSL_06.png)
-<center>다양한 Graph 종류</center>
+<center>Graph 종류 예</center>
 <br/>
 
 ---
