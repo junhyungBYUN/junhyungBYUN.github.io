@@ -364,3 +364,23 @@ def e_radius(euc, epsilon):
     e_distance = np.where(euc < epsilon, euc, np.inf)
     return e_distance
 ```    
+
+```c
+import os
+import numpy as np
+import numpy.linalg as lin
+import pandas as pd
+import matplotlib.pyplot as plt
+from scipy import sparse 
+from scipy.sparse.linalg import inv
+from scipy.spatial import distance
+```
+
+```c
+def e_radius(euc, epsilon):
+    if epsilon <= 0:
+        print('Use epsilon >= 0')
+        return None
+    e_distance = np.where(euc < epsilon, euc, np.inf)
+    return e_distance
+```    
