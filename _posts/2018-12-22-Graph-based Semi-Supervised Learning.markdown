@@ -320,6 +320,19 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 
 # Python Code for Graph-based Semi-Supervised Learning
+
+<br/>
+<br/>
+
+### 본격적인 Code를 살펴보기에 앞서, 본 내용은 2017년 2학기에 고려대학교 산업경영공학과 강필성 교수님의 Business Analytics를 수강한 당시 안건이 학생의 Code와 Data임을 밝힙니다. 
+
+### 해당 Code는 본 posting의 서두에 밝힌 https://github.com/pilsung-kang/Business-Analytics 에서 확인할 수 있으며 이와 관련된 동영상 강의자료는 https://www.youtube.com/watch?v=AKkdONj7jxw&index=16&list=PLetSlH8YjIfXHbqJmguPdw1H7BmZPy6SS 에서 확인할 수 있습니다.
+
+### 그럼 이제 본격적인 Code를 살펴보겠습니다.
+
+<br/>
+<br/>
+
 ```python
 import os
 import numpy as np
@@ -330,3 +343,262 @@ from scipy import sparse
 from scipy.sparse.linalg import inv
 from scipy.spatial import distance
 ```
+
+### 우선 필요한 패키지들을 설치하고 불러옵니다.
+---
+
+```python
+datafile = "~/Data1.csv"
+data = pd.read_csv(datafile, engine="python")
+Testdata = pd.read_csv(datafile, engine="python")
+Testdata
+```
+
+### Data를 불러와서 Training용 Data와 Test용 Data로 모두 할당합니다. 원래 Raw Data를 확인해보면,
+---
+
+![GbSSL_21]({{site.baseurl}}/assets/img/GbSSL_21.png)
+<center>Raw Data 구조</center>
+<br/>
+
+### 와 같이 0, 1 두 개의 label class로 이루어진 2차원 Data와 label이 없는 2차원 Data로 구성된 것을 확인할 수 있습니다. 
+
+### label class 0 Data는 68개이고 label class 1 Data는 38개이며 label이 없는 Data는 104개, 총 210개로 이루어져 있습니다.
+---
+
+```python
+plt.scatter(Testdata['V1'],Testdata['V2'])
+plt.show()
+```
+
+### 우선 label에 상관없이 Data를 시각화해보면,
+
+![GbSSL_22]({{site.baseurl}}/assets/img/GbSSL_22.png)
+<center>Raw Data 시각화 (label X)</center>
+<br/>
+
+### 와 같이, 밀도 방식의 내외부 원형구조로 이루어진 것을 확인할 수 있습니다. 
+### 이러한 사실은 뒤에서 사용할 Graph로 ε-radius 방식을 적용해보게 되는 배경이 됩니다. 
+### 따라서 앞으로 흘러갈 전반적인 code의 흐름을 먼저 정리해보면, 이론 내용에서 다뤘던 Graph-based SSL에서 수학적으로 Label을 추정하는 방법2와 방법3을 각각 적용해서 잘 labeling 되는지 확인해보겠습니다.
+### 우선, 방법2에 대해서 살펴보겠습니다.
+
+---
+
+<br/>
+<br/>
+
+# Python Code for Graph-based SSL에서 수학적으로 Label을 추정하는 방법2
+
+<br/>
+<br/>
+
+## 1. label이 없는 Data에 대해 label 값을 추정하기 위해 우선 문자열인 각 label 값을 모두 숫자로 바꿉니다. 
+
+## 2. 그리고 기존의 label 값을 따로 행렬로 변환합니다.
+
+## 3. 이어서 Laplacian Matrix로 label을 추정하기 위해 Weight Matrix를 계산합니다. 이때, ε-radius Graph를 사용하여 RBF Kernel로 Weight Matrix를 생성하기 위해 code로 ε-radius Graph 함수를 정의하고 Euclidean Distance를 이용한 Distance Matrix를 만들어 RBF Kernel 함수 정의에 사용합니다. 
+
+## 4. 계산된 Weight Matrix를 가지고 열(또는 행)마다 합을 계산하여 Diagonal Degree Matrix를 계산하면 최종적으로 Laplacian Matrix를 구할 수 있게 됩니다. 그리고 해당 Laplacian Matrix로 label을 추정하기 위해 Subset Matrix를 구성합니다.
+
+## 5. 해당 Subset Matrix와 기존의 label 행렬을 가지고 Harmonic Function 값을 계산한 뒤, 사용자가 설정한 cut-off를 기준으로 labeling을 마무리하게 됩니다.
+
+---
+
+## 1-1. label class를 나누어 각 class와 label 유무에 대한 index에 대한 정보를 저장합니다.
+```python
+class0_idx = (data['V3'] == '0')
+class1_idx = (data['V3'] == '0')
+labeled_idx = (class0_idx | class1_idx)
+unlabeled_idx = (labeled_idx != True)
+```
+
+## 1-2. 문자열(String) 정보를 숫자로 바꿔줍니다.
+```python
+num_samples = data.shape[0]
+num_samples # 210
+y = np.zeros(shape=(num_samples)) y # 0을 210개 생성
+y[class0_idx] = 0
+y[class1_idx] = 1
+y[unlabeled_idx] = 0.5
+data['V3'] = y
+```
+
+### 임의의 숫자로 0 Data가 210개 있는 y Data를 생성 후, 순차적으로 label class 숫자 값을 할당합니다.
+
+### 이는 기존에 불러온 Data의 label class 값이 숫자 형식이 아닌 문자열 형식의 정보(String)를 숫자로 바꿔주기 위함입니다.
+
+### 따라서 기존에 정의한 data의 label class에 해당하는 세 번째 열 V3에 ‘숫자’ label class로 바꿔줍니다.
+
+### 참고로 label이 없는 index 값은 label 값과 겹치지 않기 위해 0.5 값을 가지도록 했습니다.
+
+### label class 값이 +1과 –1일 때 label이 없는 index 값을 0으로 하는 것과 유사합니다.
+
+---
+
+## 2. 기존의 label 값을 따로 행렬로 변환하고 label이 있는 Data의 길이 정보도 계산합니다. label이 있는 Data의 길이 정보를 계산하는 이유는 나중에 Subset Laplacian Matrix를 구성하기 위함입니다.
+```python
+length = len(y)
+Yl = np.full((length,1),0)
+Yl[class0_idx] = 0
+Yl[class1_idx] = 1
+labeled_length = len(y[labeled_idx])
+labeled_length
+```
+
+### 이론에서도 언급했었던 실제 label 값을 행렬로 만들어 마지막에 label을 추정하기 위한  (Harmonic Function) 준비를 합니다. 
+
+### 이를 위해 앞의 code에서 할당했던 label class index 값들을 불러와 행렬을 구성합니다. 
+
+---
+
+## 3-1. RBF kernal 함수에 사용할 Euclidean Distance Matrix를 만들어 줍니다.
+```python
+data.iloc[:, :2]
+euc = distance.cdist(data.iloc[:, :2], data.iloc[:, :2], 'sqeuclidean')
+```
+
+## 3-2. ε-radius Graph 함수를 정의하고 Euclidean Distance를 이용한 Distance Matrix를 만들어 RBF Kernel 함수 정의에 사용합니다. 반지름 ε이 0보다 작거나 같을 수는 없고 0보다 클 때 실제 Euclidean Distance가 ε보다 작거나 같은 Node들만 연결 고려대상으로 합니다.
+```python
+def e_radius(euc, epsilon):
+    if epsilon <= 0:
+        print('Use epsilon >= 0')
+        return None
+    e_distance = np.where(euc <= epsilon, euc, np.inf)
+    return e_distance
+```
+
+## 3-3. ε-radius Graph에서 연결된 Node들 간 거리를 반환받아 그 거리 정보를 가지고 RBF Kernel이 적용된 Matrix를 반환합니다.
+```python
+def RBF_Weight(euc, epsilon, gamma):
+    euc = e_radius(euc, epsilon)
+   
+    #RBF
+    w_matrix = np.exp(-euc*gamma) #시그마 제곱 대신 gamma를 사용한다(시그마 제곱의 역수).
+    np.fill_diagonal(w_matrix,0)
+    return w_matrix
+```
+
+## 3-4. ε-radius Graph와 RBF Kernel을 이용해 Graph의 원의 반지름이 1, RBF Kernel에서 gamma값이 20인 Weight Matrix를 계산합니다.
+```python
+W = RBF_Weight(euc, epsilon = 1, gamma = 20)
+```
+
+---
+
+## 4-1. 계산된 Weight Matrix를 가지고 열(또는 행)마다 합을 계산하고 원소들을 대각화해서 Diagonal Degree Matrix를 구합니다.
+```python
+colsum = W.sum(axis=1)
+D = sparse.diags(colsum)
+```
+
+## 4-2. Diagonal Degree Matrix에서 Weight Matrix를 빼서 최종적인 Laplacian Matrix를 구합니다.
+```python
+L = D - W
+```
+
+## 4-3. 앞 2번 code에서 label이 있는 Data의 길이 정보를 가져와 Subset Laplacian Matrix를 구성합니다.
+```python
+Luu = L[labeled_length:,labeled_length:]
+Lul = L[labeled_length:,:labeled_length]
+```
+
+---
+
+## 5-1. 해당 Subset Matrix와 기존의 label 행렬을 가지고 Harmonic Function 값을 계산합니다.
+```python
+Fu = -lin.inv(Luu)*Lul*Yl[labeled_idx]
+```
+
+## 5-2. 사용자가 설정한 cut-off를 기준으로 labeling을 마무리하게 됩니다.
+```python
+Fu_lenght = len(Fu)
+for i in range(Fu_lenght):
+    if Fu[i,0] >= 0.5:
+        Fu[i,0] = 1
+    else:
+        Fu[i,0] = 0
+```
+
+## 5-3. 새로 부여된 label을 Data에 추가하여 시각화합니다.
+```python
+Total_y_length = len(y[class0_idx]) + len(y[class1_idx]) + len(y[unlabeled_idx])
+Total_y =  np.full((Total_y_length,1),0)
+Total_y[class0_idx] = 0
+Total_y[class1_idx] = 1
+Total_y[unlabeled_idx] = Fu 
+Testdata['V3'] = Total_y
+Testdata
+
+plt.scatter(data['V1'],data['V2'],c=data['V3'])
+plt.show()
+```
+
+![GbSSL_23]({{site.baseurl}}/assets/img/GbSSL_23.png)
+<center>노란색 점 : class 0 / 보라색 점 : class 1 / 초록색 점 : 모르는 label (label X)</center>
+<br/>
+
+```python
+plt.scatter(Testdata['V1'],Testdata['V2'],c=Testdata['V3'])
+plt.show()
+```
+
+![GbSSL_24]({{site.baseurl}}/assets/img/GbSSL_24.png)
+<center>[Graph-based SSL 방법2] labeling 결과</center>
+<br/>
+
+### 이처럼 잘 labeling된 것을 확인할 수 있습니다.
+
+---
+
+<br/>
+<br/>
+
+# Python Code for Graph-based SSL에서 수학적으로 Label을 추정하는 방법3
+
+<br/>
+<br/>
+
+### Graph-based SSL에서 수학적으로 Label을 추정하는 방법2와 다르게 이번에는 실제 label 값도 함께 control 해보겠습니다.
+
+## 1. 방법3에서 결론지었던 명시적 해를 구하는데 필요한 요소들을 순서대로 단위행렬 I, λ, Laplacian Matrix, 실제 label vector 구해보겠습니다.
+```python
+I = sparse.eye(L.shape[0])
+Lam = 2.0
+L  # 방법2에서 이미 계산완료
+YL = np.full((len(y),1),0)
+YL[class0_idx] = 0
+YL[class1_idx] = 1
+YL[unlabeled_idx] = 0.5
+
+Fu_ = lin.inv(I + Lam*L)*YL
+```
+
+## 2. cut-off 0.4를 기준으로 labeling, 이때 기존에 알고 있던 label도 바뀔 수 있는 상황입니다.
+```python
+Fu__length = len(Fu_)
+for i in range(Fu__length):
+    if Fu_[i,0] >= 0.4:
+        Fu_[i,0] = 1
+    else:
+        Fu_[i,0] = 0
+```
+
+## 3. λ값이 반영된 기존 label에 대한 추정값과 모르던 label에 대한 추정값을 모두 최종적으로 산출하여 labeling 합니다.
+```python
+Total_y_length_ = len(y[class0_idx]) + len(y[class1_idx]) + len(y[unlabeled_idx])
+Total_y_ =  np.full((Total_y_length_,0),0)
+Total_y_ = Fu_ 
+Testdata['V3'] = Total_y_
+```
+
+## 4. labeling 잘 됐는지 시각화를 통해 확인합니다.
+```python
+plt.scatter(Testdata['V1'],Testdata['V2'],c=Testdata['V3'])
+plt.show()
+```
+
+![GbSSL_25]({{site.baseurl}}/assets/img/GbSSL_25.png)
+<center>[Graph-based SSL 방법3] labeling 결과</center>
+<br/>
+
+### 이처럼 잘 labeling된 것을 확인할 수 있습니다.
