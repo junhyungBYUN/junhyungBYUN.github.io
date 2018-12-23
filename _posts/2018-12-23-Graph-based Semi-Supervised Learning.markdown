@@ -597,8 +597,8 @@ plt.scatter(Testdata['V1'],Testdata['V2'],c=Testdata['V3'])
 plt.show()
 ```
 
-![GbSSL_25]({{site.baseurl}}/assets/img/GbSSL_25.png){:.right}
-<center>[Graph-based SSL 방법3] labeling 결과</center>
+<center>![GbSSL_25]({{site.baseurl}}/assets/img/GbSSL_25.png)
+[Graph-based SSL 방법3] labeling 결과</center>
 <br/>
 
 ### 이처럼 잘 labeling된 것을 확인할 수 있습니다.
