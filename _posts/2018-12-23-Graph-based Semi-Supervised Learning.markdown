@@ -357,7 +357,7 @@ Testdata
 ### Data를 불러와서 Training용 Data와 Test용 Data로 모두 할당합니다. 원래 Raw Data를 확인해보면,
 ---
 
-<center>![GbSSL_21]({{site.baseurl}}/assets/img/GbSSL_21.png)</center>
+![GbSSL_21]({{site.baseurl}}/assets/img/GbSSL_21.png){: .center}
 <center>Raw Data 구조</center>
 <br/>
 
@@ -373,7 +373,7 @@ plt.show()
 
 ### 우선 label에 상관없이 Data를 시각화해보면,
 
-<center>![GbSSL_22]({{site.baseurl}}/assets/img/GbSSL_22.png)</center>
+![GbSSL_22]({{site.baseurl}}/assets/img/GbSSL_22.png){: .center}
 <center>Raw Data 시각화 (label X)</center>
 <br/>
 
@@ -533,7 +533,7 @@ plt.scatter(data['V1'],data['V2'],c=data['V3'])
 plt.show()
 ```
 
-<center>![GbSSL_23]({{site.baseurl}}/assets/img/GbSSL_23.png)</center>
+![GbSSL_23]({{site.baseurl}}/assets/img/GbSSL_23.png){: .center}
 <center>노란색 점 : class 0 / 보라색 점 : class 1 / 초록색 점 : 모르는 label (label X)</center>
 <br/>
 
@@ -542,7 +542,7 @@ plt.scatter(Testdata['V1'],Testdata['V2'],c=Testdata['V3'])
 plt.show()
 ```
 
-<center>![GbSSL_24]({{site.baseurl}}/assets/img/GbSSL_24.png)</center>
+![GbSSL_24]({{site.baseurl}}/assets/img/GbSSL_24.png){: .center}
 <center>[Graph-based SSL 방법2] labeling 결과</center>
 <br/>
 
@@ -597,7 +597,7 @@ plt.scatter(Testdata['V1'],Testdata['V2'],c=Testdata['V3'])
 plt.show()
 ```
 
-<center>![GbSSL_25]({{site.baseurl}}/assets/img/GbSSL_25.png)</center>
+![GbSSL_25]({{site.baseurl}}/assets/img/GbSSL_25.png){: .center}
 <center>[Graph-based SSL 방법3] labeling 결과</center>
 <br/>
 
