@@ -161,13 +161,15 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 따라서 기존 label과 추정 label로 각각 part를 나누어 생각해볼 수 있고 이때 minimum cut algorithm을 사용합니다. 
 
-### minimum cut algorithm이란 Network Flow에서 등장하는 개념으로, 줄여서 mincut algorithm으로 부르며 네트워크식으로 연결된 Node들의 Edge에 따라 비용을 최소화하기 위해 Node들의 간선을 cut하는 방식입니다. 
+### minimum cut algorithm이란 Network Flow에서 등장하는 개념으로, 줄여서 mincut algorithm으로 부릅니다.
+
+### mincut algorithm은 네트워크식으로 연결된 Node들의 Edge에 따라 서로 다른 label을 가진 Node들로 부터 오는 비용을 최소화하기 위해 Node들의 간선을 cut하는 방식입니다. 
 
 ### 이때, Graph의 방식이 Direct인지 Indirect인지에 따라 cut하는 방식이 달라집니다. 
 
 ### Graph-based Semi-Supervised의 경우 Indirect Graph 방식이기 때문에 cut했을 때의 비용으로, cut하는 단순 간선의 개수가 될 수 있고, cut하는 간선의 가중치(Edge)의 합이 될 수도 있습니다. 
 
-### 본 내용의 경우, 유사도를 가중치로 계산하기 때문에 가중치의 합이 최소가 되는 방향으로 cut하는 Graph가 될 것을 알 수 있습니다. 
+### 본 내용의 경우, 유사도를 가중치로 계산하기 때문에 서로 다른 label을 갖는 Node의 간선을 cut해서 가중치의 합이 최소가 되는 방향으로 Graph가 구성되는 것을 알 수 있습니다.
 
 ### 조금 더 이해를 돕기 위해 아래의 그림 예시를 참고하시면 될 것 같습니다.
 
