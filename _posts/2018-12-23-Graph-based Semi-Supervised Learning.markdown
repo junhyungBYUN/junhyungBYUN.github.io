@@ -597,7 +597,7 @@ plt.scatter(Testdata['V1'],Testdata['V2'],c=Testdata['V3'])
 plt.show()
 ```
 
-![GbSSL_25]({{site.baseurl}}/assets/img/GbSSL_25.png){:.center}
+![GbSSL_25]({{site.baseurl}}/assets/img/GbSSL_25.png){:.right}
 <center>[Graph-based SSL 방법3] labeling 결과</center>
 <br/>
 
