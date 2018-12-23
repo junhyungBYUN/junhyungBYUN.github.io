@@ -67,6 +67,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ![GbSSL_02]({{site.baseurl}}/assets/img/GbSSL_02.png)
 <center>Semi-Supervised Learning vs. Transductive Learning</center>
+<br/>
 
 ### Semi-Supervised Learning처럼 labeling 하는 것에 관심이 있는 것은 같지만, 그 대상이 모델을 학습하는데 사용한 label이 없는 Data, 즉 Unlabeled Training Data라는 것이죠. 
 
@@ -84,6 +85,8 @@ author: junhyung BYUN # Add name author (optional)
 ### 먼저 아래의 그림을 보면,
 
 ![GbSSL_03]({{site.baseurl}}/assets/img/GbSSL_03.png)
+<center>Dataset의 Graph Node화</center>
+<br/>
 
 ### 주어진 왼쪽의 Data Set에서 instance 단위로 오른쪽 Graph의 Node에 할당되는 것을 알 수 있습니다. 
 
@@ -116,6 +119,8 @@ author: junhyung BYUN # Add name author (optional)
 ### 이와 관련된 예시는 아래의 손글씨 인식 그림을 통해서도 확인할 수 있습니다.
 
 ![GbSSL_04]({{site.baseurl}}/assets/img/GbSSL_04.png)
+<center>손글씨 인식</center>
+<br/>
 
 ### 이처럼 Graph-based Learning의 가정은 두 Node가 유사하면(Edge 굵기가 굵으면, heavy Edge) 근처의 유사한 Node의 label과 동일한 label을 갖는 것이 합당하다는 것입니다. 
 
@@ -139,6 +144,8 @@ author: junhyung BYUN # Add name author (optional)
 
 
 ![GbSSL_06]({{site.baseurl}}/assets/img/GbSSL_06.png)
+<center>다양한 Graph 종류</center>
+<br/>
 
 ---
 
@@ -164,6 +171,8 @@ author: junhyung BYUN # Add name author (optional)
 ### 조금 더 이해를 돕기 위해 아래의 그림 예시를 참고하시면 될 것 같습니다.
 
 ![GbSSL_07]({{site.baseurl}}/assets/img/GbSSL_07.png)
+<center>Graph cut 예</center>
+<br/>
 
 ### 그리고 이를 수식화하면,
 
