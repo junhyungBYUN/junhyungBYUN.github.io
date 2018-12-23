@@ -598,6 +598,7 @@ plt.show()
 ```
 
 ![GbSSL_25]({{site.baseurl}}/assets/img/GbSSL_25.png){: .center}
+
 <center>[Graph-based SSL 방법3] labeling 결과</center>
 <br/>
 
