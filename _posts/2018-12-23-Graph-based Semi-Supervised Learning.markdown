@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Graph-based Semi-Supervised Learning
-date: 2018-12-23 17:21:20 +0300
+date: 2018-12-23 17:30:20 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: post-7.png # Add image post (optional)
 tags: [Blog, Machine Learning]
