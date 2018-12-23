@@ -328,9 +328,9 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 해당 Code는 본 posting의 서두에 밝힌 https://github.com/pilsung-kang/Business-Analytics 에서 확인할 수 있으며 이와 관련된 동영상 강의자료는 https://www.youtube.com/watch?v=AKkdONj7jxw&index=16&list=PLetSlH8YjIfXHbqJmguPdw1H7BmZPy6SS 에서 확인할 수 있습니다.
 
+<br/>
 ### 그럼 이제 본격적인 Code를 살펴보겠습니다.
 
-<br/>
 <br/>
 
 ```python
