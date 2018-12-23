@@ -387,7 +387,7 @@ plt.show()
 <br/>
 <br/>
 
-# Python Code for Graph-based SSL에서 수학적으로 Label을 추정하는 방법2
+## Python Code for Graph-based SSL에서 수학적으로 Label을 추정하는 방법2
 
 <br/>
 <br/>
@@ -553,7 +553,7 @@ plt.show()
 <br/>
 <br/>
 
-# Python Code for Graph-based SSL에서 수학적으로 Label을 추정하는 방법3
+## Python Code for Graph-based SSL에서 수학적으로 Label을 추정하는 방법3
 
 <br/>
 <br/>
