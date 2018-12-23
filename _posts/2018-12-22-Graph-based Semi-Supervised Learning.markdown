@@ -365,7 +365,7 @@ def e_radius(euc, epsilon):
     return e_distance
 ```    
 
-```c
+```R
 import os
 import numpy as np
 import numpy.linalg as lin
@@ -376,7 +376,7 @@ from scipy.sparse.linalg import inv
 from scipy.spatial import distance
 ```
 
-```c
+```R
 def e_radius(euc, epsilon):
     if epsilon <= 0:
         print('Use epsilon >= 0')
