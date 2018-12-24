@@ -61,6 +61,7 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 
 # Semi-Supervised Learning vs. Transductive Learning
+<br/>
 
 ### 앞에서 설명했듯이 Semi-Supervised Learning은 ‘새로운’ Data에 대해서 잘 labeling 하는 것에 관심이 있습니다. 
 
@@ -82,6 +83,7 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 
 # Dataset의 Graph Node 화 및 Node 간 Indirect 연결 방식
+<br/>
 
 ### 먼저 아래의 그림을 보면,
 
@@ -131,6 +133,7 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 
 # 수학적 기호 정의와 Graph 종류 및 유사도 가중치 계산방식
+<br/>
 
 ### 그렇다면 실제로 Unlabeled Data에 대해 label을 찾기 위한 수학적 알고리즘은 어떻게 될까요?
 
@@ -153,6 +156,7 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 
 # Graph-based SSL에서 수학적으로 Label을 추정하는 방법1
+<br/>
 
 ### 우리가 알고 싶은 것은 기존에 가지고 있는 Unlabeled Data에 대한 label 값입니다. 
 
@@ -220,6 +224,7 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 
 # Graph-based SSL에서 수학적으로 Label을 추정하는 방법2
+<br/>
 
 ![GbSSL_11]({{site.baseurl}}/assets/img/GbSSL_11.png)
 
@@ -244,7 +249,8 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 <br/>
 
-# Graph Laplacian Matrix
+# Graph Laplacian Matrix를 이용한 방법2의 해 구하기
+<br/>
 
 ### 우리가 가지고 있는 Data에서, label이 있는 Data의 개수는 l이고 label 없는 Data의 개수는 u라 할 때 모든 Data의 개수는 l+u가 됩니다.
 
@@ -290,6 +296,7 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 
 # Graph-based SSL에서 수학적으로 Label을 추정하는 방법3
+<br/>
 
 ### Graph-based SSL에서 수학적으로 Label을 추정하는 방법1과 방법2에서는 모두 ‘기존 label part’에서 실제 label을 그대로 적용했습니다.
 
