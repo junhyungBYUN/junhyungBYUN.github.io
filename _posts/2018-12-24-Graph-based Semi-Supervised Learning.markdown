@@ -15,7 +15,7 @@ author: junhyung BYUN # Add name author (optional)
 ### 본 내용은 고려대학교 산업경영공학과 강필성 교수님의 강의와 강의자료를 바탕으로 작성됐음을 밝힙니다. 
 (https://github.com/pilsung-kang/Business-Analytics)
 
-### 또한, 본 내용은 먼저 이론 내용 전체를 살펴본 뒤 그 이론에 대한 독자의 이해를 바탕으로 Python Code를 살펴보는 방식으로 구성돼 있습니다. 
+### 또한, 본 내용은 먼저 이론 내용 전체를 살펴본 뒤 그 이론에 대한 독자의 이해를 바탕으로 Python Code를 살펴보고 마지막으로 요약하는 방식으로 구성돼 있습니다. 
 
 ### 자, 그럼 이제 시작해볼까요?
 
@@ -324,9 +324,7 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 <br/>
 
-### 본격적인 Code를 살펴보기에 앞서, 본 내용은 2017년 2학기에 고려대학교 산업경영공학과 강필성 교수님의 Business Analytics를 수강한 당시 안건이 학생의 Code와 Data임을 밝힙니다. 
-
-### 해당 Code는 본 posting의 서두에 밝힌 https://github.com/pilsung-kang/Business-Analytics 에서 확인할 수 있으며 이와 관련된 동영상 강의자료는 https://www.youtube.com/watch?v=AKkdONj7jxw&index=16&list=PLetSlH8YjIfXHbqJmguPdw1H7BmZPy6SS 에서 확인할 수 있습니다.
+### 본격적인 Code를 살펴보기에 앞서, 해당 Code는 본 posting의 서두에 밝힌 것 처럼, 고려대학교 산업경영공학과 강필성 교수님의 Business Analytics 강의자료 (https://github.com/pilsung-kang/Business-Analytics)를 바탕으로 작성됐음을 다시 한번 밝힙니다.
 
 <br/>
 ### 그럼 이제 본격적인 Code를 살펴보겠습니다.
