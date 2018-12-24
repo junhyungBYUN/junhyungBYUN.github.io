@@ -245,9 +245,9 @@ author: junhyung BYUN # Add name author (optional)
 
 # Graph Laplacian Matrix
 
-### label이 있는 Data의 개수는 l이고 label 없는 Data의 개수는 u이므로 모든 Data의 개수는 l+u가 됩니다.
+### 우리가 가지고 있는 Data에서, label이 있는 Data의 개수는 l이고 label 없는 Data의 개수는 u라 할 때 모든 Data의 개수는 l+u가 됩니다.
 
-### 지금부터 설명할 대부분의 Matrix는 행 또는 열이 모두 l+u인 행렬들로, label을 추정하는 두 번째 방법에서, ‘추정 label part’에 해당하는 식을 간단하게 계산하기 위해 다음 과정의 행렬들을 계산합니다.
+### 지금부터 설명할 대부분의 Matrix는 행 또는 열이 l+u인 행렬들로, label을 추정하는 두 번째 방법에서 ‘추정 label part’에 해당하는 식을 간단하게 계산하기 위해 아래의 행렬을 계산합니다.
 
 ![GbSSL_13]({{site.baseurl}}/assets/img/GbSSL_13.png)
 
@@ -257,13 +257,15 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 이 됩니다.
 
-### 예를 들어 아래의 Graph(Node의 숫자는 각 Node의 label이 아닌 Node 번호)를 갖는 경우,
+### 조금 더 쉬운 이해를 위해 예를 들어보겠습니다.
+
+### Data가 아래의 Graph(Node의 숫자는 각 Node의 label이 아닌 Node 번호)를 갖는 경우,
 
 ![GbSSL_15]({{site.baseurl}}/assets/img/GbSSL_15.png)
 
 ### 먼저 유사도 행렬 W를 Node간 연결이 된 경우에는 1, 그렇지 않으면 0인 방식(Adjacency Matrix)으로 계산합니다.
 
-### 이어서 이 W의 열별 유사도의 합을 계산하여 Diagonal Degree Matrix D를 구하여 최종적으로 Graph Laplacian Matrix를 계산합니다.
+### 이어서 이 W의 열별 유사도의 합을 계산하고 Diagonal Degree Matrix D를 구하여 최종적으로 Graph Laplacian Matrix를 계산합니다.
 
 ### 이때, ‘추정 label part’ 식은
 
@@ -271,13 +273,13 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 으로 표현할 수 있는 것을 확인할 수 있습니다.
 
-### 한편, ‘추정 label part’의 Graph Laplacian Matrix를 이용해서 실제로 우리가 알고 싶은 label의 추정값(f_u) 부분만을 쉽게 계산할 수 있습니다.
+### 한편, ‘추정 label part’의 Graph Laplacian Matrix를 이용해서 실제로 우리가 알고 싶은 label의 추정값(f_u) 부분만 쉽게 계산할 수도 있습니다.
 
 ### 바로 Partition Laplacian Matrix를 사용하는 것인데요, 이제부터 살펴보겠습니다. 
 
 ![GbSSL_17]({{site.baseurl}}/assets/img/GbSSL_17.png)
 
-### 그리고 Partition Laplacian를 적용하기 위해 ‘추정 label part’를 Harmonic Function Vector f에 대해 미분하면,
+### 그리고 Partition Laplacian을 적용하기 위해 ‘추정 label part’를 Harmonic Function Vector f에 대해 미분하면,
 
 ![GbSSL_18]({{site.baseurl}}/assets/img/GbSSL_18.png)
 
