@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Graph-based Semi-Supervised Learning
-date: 2018-12-24 13:22:20 +0300
+date: 2018-12-24 13:25:20 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: post-7.png # Add image post (optional)
 tags: [Blog, Machine Learning]
@@ -646,6 +646,8 @@ plt.show()
 ### 하지만 어떤 방법이든 항상 명시적인 해가 존재합니다.
 
 ### 따라서 Graph-based Semi-Supervised Learning은 가지고 있는 Data의 label이 궁금할 때 합리적으로 적용해볼 수 있는 기계학습 방법입니다.
+
+### 긴 글 읽어주셔서 감사합니다.
 
     # label
     # Transductive Learning
