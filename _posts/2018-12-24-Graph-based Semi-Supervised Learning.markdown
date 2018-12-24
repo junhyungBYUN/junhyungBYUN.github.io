@@ -361,7 +361,7 @@ Testdata
 <center>Raw Data 구조</center>
 <br/>
 
-### 와 같이 0, 1 두 개의 label class로 이루어진 2차원 Data와 label이 없는 2차원 Data로 구성된 것을 확인할 수 있습니다. 
+### 0과 1 두 개의 label class로 이루어진 2차원 Data와 label이 없는 2차원 Data로 구성된 것을 확인할 수 있습니다(V3). 
 
 ### label class 0 Data는 68개이고 label class 1 Data는 38개이며 label이 없는 Data는 104개, 총 210개로 이루어져 있습니다.
 ---
@@ -379,7 +379,8 @@ plt.show()
 
 ### 와 같이, 밀도 방식의 내외부 원형구조로 이루어진 것을 확인할 수 있습니다. 
 ### 이러한 사실은 뒤에서 사용할 Graph로 ε-radius 방식을 적용해보게 되는 배경이 됩니다. 
-### 따라서 앞으로 흘러갈 전반적인 code의 흐름을 먼저 정리해보면, 이론 내용에서 다뤘던 Graph-based SSL에서 수학적으로 Label을 추정하는 방법2와 방법3을 각각 적용해서 잘 labeling 되는지 확인해보겠습니다.
+### 따라서 앞으로 흘러갈 code의 큰 흐름을 먼저 정리해보겠습니다.
+### 이론 내용에서 완화 조건이 적용된 Graph-based SSL Label 추정 방법2와 방법3을 각각 적용하고 잘 labeling 되는지 확인해보겠습니다.
 ### 우선, 방법2에 대해서 살펴보겠습니다.
 
 ---
