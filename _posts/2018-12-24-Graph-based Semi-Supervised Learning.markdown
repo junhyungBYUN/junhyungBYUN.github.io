@@ -161,7 +161,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### minimum cut algorithm이란 Network Flow에서 등장하는 개념으로, 줄여서 mincut algorithm으로 부릅니다.
 
-### mincut algorithm은 네트워크식으로 연결된 Node들의 Edge에 따라 서로 다른 label을 가진 Node들로 부터 오는 비용을 최소화하기 위해 Node들의 간선을 cut하는 방식입니다. 
+### mincut algorithm은 네트워크식으로 연결된 Node들의 Edge에 따라 서로 다른 label을 가진 Node들로부터 오는 비용을 최소화하기 위해 Node들의 간선을 cut하는 방식입니다. 
 
 ### 이때, Graph의 방식이 Direct인지 Indirect인지에 따라 cut하는 방식이 달라집니다. 
 
@@ -183,15 +183,15 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 이 말은 label을 알고 있는 Data는 항상 완벽해서 Noise나 Error가 전혀 없다고 보기 때문에, 기존 label은 반드시 유지해야 한다는 것을 의미합니다.
 
-### 그러면서 추정하고 싶은 label에 대해서는 0 또는 1의 정수만 가질 수 있는 것도 의미합니다.
+### 그러면서 추정하고 싶은 label y_i와 y_j에 대해서는 0 또는 1의 정수만 가질 수 있는 것도 의미합니다.
 
 ### 즉, 0~1 사이의 실숫값도 허용하지 않고 solution 자체가 0 아니면 1이어야 하는, 엄격한 기준을 세우고 있는 것입니다. 
 
 ### 이렇게 두 가지 전제 조건 아래에, 유사도 w를 이용한 추정 label의 오차 절대 합이 최소가 되게 하는 것이 목적입니다.
 
-### 만약 유사도 w가 매우 작을 때는 y_i와 y_j의 값의 큰 차이 때문에 비용을 최소화하기 위해 Graph 상에서 cut를 진행하게 됩니다. 
+### 만약 그 합이 클 때는 비용을 최소화하기 위해 Graph 상에서 cut 작업을 진행하게 됩니다. 
 
-### 즉, 이를 최적화 문제로 바꾸어 해결하면, 
+### 그리고 이를 위해 최적화 문제로 바꾸어 해결하면, 
 
 ![GbSSL_09]({{site.baseurl}}/assets/img/GbSSL_09.png)
 
