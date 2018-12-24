@@ -324,7 +324,9 @@ author: junhyung BYUN # Add name author (optional)
 <br/>
 <br/>
 
-### 본격적인 Code를 살펴보기에 앞서, 해당 Code는 본 posting의 서두에 밝힌 것 처럼, 고려대학교 산업경영공학과 강필성 교수님의 Business Analytics 강의자료 (https://github.com/pilsung-kang/Business-Analytics)를 바탕으로 작성됐음을 다시 한번 밝힙니다.
+### 본격적인 Code를 살펴보기에 앞서 서두에서 밝힌 것처럼, 해당 Code는 고려대학교 산업경영공학과 강필성 교수님의 강의자료를 바탕으로 작성됐음을 다시 한번 밝힙니다.
+
+(https://github.com/pilsung-kang/Business-Analytics)
 
 <br/>
 ### 그럼 이제 본격적인 Code를 살펴보겠습니다.
