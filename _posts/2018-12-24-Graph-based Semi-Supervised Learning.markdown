@@ -442,7 +442,7 @@ data['V3'] = y
 
 ---
 
-### 2. 기존의 label 값을 따로 행렬로 변환하고 label이 있는 Data의 길이 정보도 계산합니다. label이 있는 Data의 길이 정보를 계산하는 이유는 나중에 Subset Laplacian Matrix를 구성하기 위함입니다.
+### 2. 기존의 label 값을 따로 행렬로 변환하고 label이 있는 Data의 길이 정보도 계산합니다. 그 이유는 나중에 Subset Laplacian Matrix를 구성하기 위함입니다.
 ```python
 length = len(y)
 Yl = np.full((length,1),0)
@@ -511,12 +511,12 @@ Lul = L[labeled_length:,:labeled_length]
 
 ---
 
-### 5-1. 해당 Subset Matrix와 기존의 label 행렬을 가지고 Harmonic Function 값을 계산합니다.
+### 5-1. 해당 Subset Matrix와 2번 code에서 계산한 기존의 label 행렬을 가지고 Unlabeled Harmonic Function 값을 계산합니다.
 ```python
 Fu = -lin.inv(Luu)*Lul*Yl[labeled_idx]
 ```
 
-### 5-2. 사용자가 설정한 cut-off를 기준으로 labeling을 마무리하게 됩니다.
+### 5-2. 사용자가 설정한 cut-off(여기서는 0.5)를 기준으로 labeling을 마무리하게 됩니다.
 ```python
 Fu_lenght = len(Fu)
 for i in range(Fu_lenght):
@@ -526,7 +526,7 @@ for i in range(Fu_lenght):
         Fu[i,0] = 0
 ```
 
-### 5-3. 새로 부여된 label을 Data에 추가하여 시각화합니다.
+### 5-3. 새로 부여된 label을 Data에 추가하여 시각화합니다. 비교를 위해 우선 labeling 전의 Data를 시각화 자료를 살펴보겠습니다.
 ```python
 Total_y_length = len(y[class0_idx]) + len(y[class1_idx]) + len(y[unlabeled_idx])
 Total_y =  np.full((Total_y_length,1),0)
@@ -544,6 +544,9 @@ plt.show()
 <center>노란색 점 : class 0 / 보라색 점 : class 1 / 초록색 점 : 모르는 label (label X)</center>
 <br/>
 
+### 다음으로 labeling 한 Data를 시각화하면,
+
+<br/>
 ```python
 plt.scatter(Testdata['V1'],Testdata['V2'],c=Testdata['V3'])
 plt.show()
