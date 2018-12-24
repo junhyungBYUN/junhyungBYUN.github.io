@@ -106,7 +106,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 그리고 추정한 그 Node의 label을 가지고 굵은 선을 따라 또다시 바로 오른쪽의 Node의 label을 추정합니다.
 
-### 이런 식으로 추정을 연속해서 결국 x3 Node의 label을 추정하게 됩니다. 
+### 이런 식으로 '이웃의 이웃' 추정을 연속해서, 결국 x3 Node의 label을 추정하게 됩니다. 
 
 ### 즉, x1 Node에서 x3로 한 번에 label을 추정하긴 어렵지만, 바로 옆의 유사한 Node를 통해 한 다리씩 건너서 추정하면(Indirect) 알고 싶은 label을 추정할 수 있습니다. 
 
@@ -133,7 +133,7 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 그렇다면 실제로 Unlabeled Data에 대해 label을 찾기 위한 수학적 알고리즘은 어떻게 될까요?
 
-### 이를 위해 우선 Graph에서의 Node와 Edge를 위한 수학적 정의를 먼저 내리게 됩니다.
+### 이를 위해 우선 Graph에서의 Node와 Edge에 대한 수학적 Notation 정의를 내리게 됩니다.
 
 ![GbSSL_05]({{site.baseurl}}/assets/img/GbSSL_05.png)
 <center>Semi-Supervised Learning에서의 Notation 정의</center>
