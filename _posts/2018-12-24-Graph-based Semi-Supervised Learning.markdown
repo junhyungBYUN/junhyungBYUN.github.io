@@ -526,7 +526,7 @@ for i in range(Fu_lenght):
         Fu[i,0] = 0
 ```
 
-### 5-3. 새로 부여된 label을 Data에 추가하여 시각화합니다. 비교를 위해 우선 labeling 전의 Data를 시각화 자료를 살펴보겠습니다.
+### 5-3. 새로 부여된 label을 Data에 추가하여 시각화합니다. 비교를 위해 우선 labeling 전 Data의 시각화 자료를 살펴보겠습니다.
 ```python
 Total_y_length = len(y[class0_idx]) + len(y[class1_idx]) + len(y[unlabeled_idx])
 Total_y =  np.full((Total_y_length,1),0)
