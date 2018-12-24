@@ -395,17 +395,23 @@ plt.show()
 
 ### 1. label이 없는 Data에 대해 label 값을 추정하기 위해 우선 문자열인 각 label 값을 모두 숫자로 바꿉니다. 
 
-### 2. 그리고 기존의 label 값을 따로 행렬로 변환합니다.
+<br/>
+### 2. 그리고 기존의 label 값을 따로 행렬로 변환합니다. 그 이유는 마지막에 labeling 할 때 계산에 필요하기 때문입니다. (이론 내용의 Graph Laplacian Matrix part 참고)
 
+<br/>
 ### 3. 이어서 Laplacian Matrix로 label을 추정하기 위해 Weight Matrix를 계산합니다. 이때, ε-radius Graph를 사용하여 RBF Kernel로 Weight Matrix를 생성하기 위해 code로 ε-radius Graph 함수를 정의하고 Euclidean Distance를 이용한 Distance Matrix를 만들어 RBF Kernel 함수 정의에 사용합니다. 
 
+<br/>
 ### 4. 계산된 Weight Matrix를 가지고 열(또는 행)마다 합을 계산하여 Diagonal Degree Matrix를 계산하면 최종적으로 Laplacian Matrix를 구할 수 있게 됩니다. 그리고 해당 Laplacian Matrix로 label을 추정하기 위해 Subset Matrix를 구성합니다.
 
+<br/>
 ### 5. 해당 Subset Matrix와 기존의 label 행렬을 가지고 Harmonic Function 값을 계산한 뒤, 사용자가 설정한 cut-off를 기준으로 labeling을 마무리하게 됩니다.
 
+<br/>
+### 그럼 이제, 각 과정의 세부적인 code를 살펴보겠습니다.
 ---
 
-### 1-1. label class를 나누어 각 class와 label 유무에 대한 index에 대한 정보를 저장합니다.
+### 1-1. label class를 나누어 각 class와 label 유무에 대한 index 정보를 저장합니다.
 ```python
 class0_idx = (data['V3'] == '0')
 class1_idx = (data['V3'] == '0')
@@ -428,11 +434,11 @@ data['V3'] = y
 
 ### 이는 기존에 불러온 Data의 label class 값이 숫자 형식이 아닌 문자열 형식의 정보(String)를 숫자로 바꿔주기 위함입니다.
 
-### 따라서 기존에 정의한 data의 label class에 해당하는 세 번째 열 V3에 ‘숫자’ label class로 바꿔줍니다.
+### 따라서 기존에 정의한 data의 label class에 해당하는 세 번째 열 V3를 ‘숫자’ label class로 바꿔줍니다.
 
-### 참고로 label이 없는 index 값은 label 값과 겹치지 않기 위해 0.5 값을 가지도록 했습니다.
+### 참고로 label이 없는 index 값은 실제 label 값과 겹치지 않기 위해 0.5 값을 가지도록 했습니다.
 
-### label class 값이 +1과 –1일 때 label이 없는 index 값을 0으로 하는 것과 유사합니다.
+### 실제 label 값이 +1과 –1일 때 label이 없는 index 값을 0으로 하는 것과 유사합니다.
 
 ---
 
