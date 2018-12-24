@@ -570,7 +570,7 @@ plt.show()
 
 ### Graph-based SSL에서 수학적으로 Label을 추정하는 방법2와 다르게 이번에는 실제 label 값도 함께 control 해보겠습니다.
 
-### 1. 방법3에서 결론지었던 명시적 해를 구하는데 필요한 요소들을 순서대로 단위행렬 I, λ, Laplacian Matrix, 실제 label vector 구해보겠습니다.
+### 1. 방법3에서 결론지었던 명시적 해를 구하는데 필요한 요소들인 단위행렬 I, λ, Laplacian Matrix, 실제 label vector를 구해보겠습니다.
 ```python
 I = sparse.eye(L.shape[0])
 Lam = 2.0
@@ -583,7 +583,7 @@ YL[unlabeled_idx] = 0.5
 Fu_ = lin.inv(I + Lam*L)*YL
 ```
 
-### 2. cut-off 0.4를 기준으로 labeling, 이때 기존에 알고 있던 label도 바뀔 수 있는 상황입니다.
+### 2. cut-off 0.4를 기준으로 labeling하고 이때, 기존 label도 바뀔 수 있는 상황입니다.
 ```python
 Fu__length = len(Fu_)
 for i in range(Fu__length):
@@ -593,7 +593,7 @@ for i in range(Fu__length):
         Fu_[i,0] = 0
 ```
 
-### 3. λ값이 반영된 기존 label에 대한 추정값과 모르던 label에 대한 추정값을 모두 최종적으로 산출하여 labeling 합니다.
+### 3. λ값이 반영된 기존 label에 대한 추정값과 모르던 label에 대한 추정값을 모두 산출하여 Data에 최종적으로 labeling 합니다.
 ```python
 Total_y_length_ = len(y[class0_idx]) + len(y[class1_idx]) + len(y[unlabeled_idx])
 Total_y_ =  np.full((Total_y_length_,0),0)
@@ -601,7 +601,7 @@ Total_y_ = Fu_
 Testdata['V3'] = Total_y_
 ```
 
-### 4. labeling 잘 됐는지 시각화를 통해 확인합니다.
+### 4. labeling 잘 됐는지 시각화를 통해 확인하면,
 ```python
 plt.scatter(Testdata['V1'],Testdata['V2'],c=Testdata['V3'])
 plt.show()
@@ -611,4 +611,4 @@ plt.show()
 <center>[Graph-based SSL 방법3] labeling 결과</center>
 <br/>
 
-### 이처럼 잘 labeling된 것을 확인할 수 있습니다.
+### 방법2 때와 마찬가지로 잘 labeling된 것을 확인할 수 있습니다.
