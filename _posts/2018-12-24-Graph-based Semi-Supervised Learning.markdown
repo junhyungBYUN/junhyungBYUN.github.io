@@ -633,7 +633,7 @@ plt.show()
 
 ### Graph-based Semi-Supervised Learning은 가지고 있는 Data 가운데 label 없는 Data의 label을 알고 싶은 Transductive Learning이고 이를 알기 위해 Graph 방법을 사용합니다.
 
-### 그리고 그 Graph를 가지고 Node들 사이의 가중치(Edge)가 큰 이웃의 이웃의 ... 이웃을 이용하여 label을 추정합니다.
+### 그리고 그 Graph를 가지고 Node들 사이의 유사도 가중치(Similarity Weight, Edge)가 큰 이웃의 이웃의 ... 이웃을 이용하여 label을 추정합니다.
 
 ### 이때, 가지고 있는 Data의 모양에 따라 사용할 Graph를 정합니다.
 
@@ -649,9 +649,9 @@ plt.show()
 
     # label
     # Transductive Learning
-    # Node
-    # Weight (Edge)
     # Graph
+    # Node
+    # Similarity Weight (Edge)
     # 기존 label
     # 추정 label
     # 엄격
