@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Graph-based Semi-Supervised Learning
-date: 2018-12-23 17:30:20 +0300
+date: 2018-12-24 12:30:20 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: post-7.png # Add image post (optional)
 tags: [Blog, Machine Learning]
@@ -44,15 +44,15 @@ author: junhyung BYUN # Add name author (optional)
 
 ### 이때, y변수는 연속형 실숫값이 될 수도 있고 범주형 값이 될 수도 있지만, 본 내용에서는 범주형 값(class label)을 기준으로 설명하겠습니다.
 
-### Supervised Learning은 모든 label 값을 알고 있는 상태에서, 사용자가 가지고 있는 Data를 충분히 잘 설명하면서 새로운 Data(x변수)에 대해서도 잘 labeling(y instance) 할 수 있는 모델(y=f(x))을 학습하는 방법입니다.
+### Supervised Learning은 모든 label 값을 알고 있는 상태에서, 사용자가 가지고 있는 Data를 충분히 잘 설명함과 동시에 새로운 Data(x변수)에 대해서도 잘 labeling(y instance) 할 수 있는 모델(y=f(x))을 학습하는 방법입니다.
 
-### Unsupervised Learning은 label을 전부 모르기 때문에, 사용자가 가지고 있는 Data의 내재적인 속성을 학습하여 label을 찾을 때 사용하기도 합니다. 
+### Unsupervised Learning은 label을 전부 모르기 때문에, 사용자가 가지고 있는 Data의 내재적인 속성을 학습하여 label을 찾을 때 사용합니다. 
 
-### 마지막으로 Semi-Supervised Learning은 Supervised Learning처럼 label이 없는 새로운 Data에 대해서 잘 labeling 하는 모델(y=f(x))을 학습하는 방법입니다만, 학습할 때 label이 없는 기존의 Data도 Input으로 함께 활용합니다. 
+### 마지막으로 Semi-Supervised Learning은 Supervised Learning처럼 label이 없는 새로운 Data에 대해 잘 labeling 하는 모델(y=f(x))을 학습하는 방법입니다만, 학습할 때 label이 없는 기존의 Data도 Input으로 함께 활용합니다. 
 
-### 그리고 어떻게 활용하면 Supervised Learning의 성능이 향상될지를 고민하게 됩니다. 
+### 그리고 어떻게 활용하면 성능이 향상될지 고민하게 됩니다. 
 
-### 즉, label이 없는 기존의 Data라도 그 Data들을 학습 과정에 추가하면 무엇인가 조금 더 좋아지지 않을까? 라는 기대에서 시작된 것입니다.
+### 즉, label이 없는 Data라도 그 Data들을 학습 과정에 추가하면 무엇인가 조금 더 좋아지지 않을까? 라는 기대에서 시작된 것입니다.
 
 ---
 
