@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Graph-based Semi-Supervised Learning
-date: 2018-12-24 12:30:20 +0300
+date: 2018-12-24 13:30:20 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: post-7.png # Add image post (optional)
 tags: [Blog, Machine Learning]
@@ -620,3 +620,39 @@ plt.show()
 <br/>
 
 ### 방법2 때와 마찬가지로 잘 labeling된 것을 확인할 수 있습니다.
+
+<br/>
+<br/>
+
+# Graph-based Semi-Supervised Learning 요약
+<br/>
+
+### 이제 Posting 내용을 요약하면서 마무리하겠습니다.
+
+### Graph-based Semi-Supervised Learning은 가지고 있는 Data 가운데 label 없는 Data의 label을 알고 싶은 Transductive Learning이고 이를 알기 위해 Graph 방법을 사용합니다.
+
+### Graph를 가지고 Node들 사이의 가중치(Edge)가 큰 이웃의 이웃의 ... 이웃을 이용하여 label을 추정합니다.
+
+### 이때, 가지고 있는 Data의 모양에 따라 사용할 Graph를 정합니다.
+
+### 가중치 계산방식은 단순 Node 연결 여부가 될 수도 있고 거리계산 방식이 될 수도 있습니다.
+
+### 결국은 가중치의 합이 최소가 되는 방향을 지향하면서 label을 추정합니다.
+
+### 한편, 추정할 label 값을 특정 label 값으로 엄격하게 한정 지을지에 대한 여부와 기존 Data의 label이 틀릴 수도 있음을 허용할지 말지에 따라 label을 추정하는 방법은 조금씩 달라집니다.
+
+### 하지만 어떤 방법이든 항상 명시적인 해가 존재합니다.
+
+### 따라서 가지고 있는 Data의 label이 궁금할 때 합리적으로 적용해볼 수 있는 기계학습 방법입니다.
+
+    # label
+    # Transductive Learning
+    # Node
+    # Weight (Edge)
+    # Graph
+    # 기존 label
+    # 추정 label
+    # 엄격
+    # 완화
+    # Laplacian Matrix
+    # Explicit Solution
